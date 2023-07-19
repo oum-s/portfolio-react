@@ -1,0 +1,58 @@
+@import '../../../styles/index.scss';
+
+.footer{
+  background-color: var(--primary);
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 7rem;
+
+  .permalinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto 3rem;
+    a{
+      color: var(--tertiary);
+      }
+  }
+
+  &__socials{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    a {
+      background-color: fuchsia;
+      padding: 0.8rem;
+      border-radius: 0.7rem;
+      display: flex;
+      border: 1px solid transparent;
+
+      &:hover{
+        background-color: transparent;
+        color: aqua;
+        border-color: var(--secondary);
+      }
+    }
+  }
+
+  &__copyright{
+    margin-bottom: 4rem;
+    color: brown;
+  }
+
+}
+
+//MEDIA QUERIES (SMALL DEVICES)
+@media screen and (max-width: 600px){
+  .permalinks{
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer__socials{
+    margin-bottom: 2.6rem;
+  }
+}

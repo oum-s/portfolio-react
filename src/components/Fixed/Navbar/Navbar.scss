@@ -1,0 +1,41 @@
+@import '../../../styles/index.scss';
+
+.Navbar{
+  width: 100%;
+  height: 7vh;
+  background-color: black;
+  margin: 1rem 1rem  4rem 1rem ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: rgb(233, 233, 168) solid 2px;
+  .nav-start{
+    .logo{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+  }
+  
+  .nav-end{
+    padding-right: 2vw;
+    display: flex;
+    align-items: center;
+    ul{
+      
+      li{
+        text-decoration: none;
+        list-style-type: none;
+        display: inline;
+        padding: 0 10px;
+        font-size: 20px;
+        a{
+          display: inline-block;
+          text-decoration: none;
+          
+        }
+      }
+    }
+  }
+}

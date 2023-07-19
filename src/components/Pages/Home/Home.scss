@@ -1,0 +1,70 @@
+@import '../../../styles/index.scss';
+
+
+.Home{
+  height: 85vh;
+  overflow: hidden;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.myPhoto, .myDescr{
+  flex-direction: column;
+  justify-content: center;
+}
+.myPhoto{
+  background: var(--primary);
+  border-radius: 20rem;
+}
+.myDescr > h3{
+  font-family: 'Anton', sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+}
+// CTA
+.cta{
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+// SCROLLDOWN
+.scroll__down{
+  position: absolute;
+  right: 2.3rem;
+  bottom: 5rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+//MEDIA QUERIES (MEDIUM DEVICES)
+@media screen and (max-width: 1024px){
+  .container{
+    background-color: red;
+  }
+  .nav{
+    height: 68vh;
+  }
+}
+
+//MEDIA QUERIES (SMALL DEVICES)
+@media screen and (max-width: 600px){
+  .nav{
+    height: 100vh;
+  }
+  .container{
+    background-color: aqua;
+  }
+  .scroll__down{
+    display: none;
+  }
+  .cta{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
