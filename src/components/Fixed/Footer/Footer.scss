@@ -1,11 +1,10 @@
 @import '../../../styles/index.scss';
 
 .footer{
-  background-color: var(--primary);
-  padding: 3rem 0;
+  background-color: var(--primary--darker);
+  padding: 2rem 0;
   text-align: center;
   font-size: 0.9rem;
-  margin-top: 7rem;
 
   .permalinks{
     display: flex;
@@ -14,7 +13,7 @@
     gap: 2rem;
     margin: 0 auto 3rem;
     a{
-      color: var(--tertiary);
+      color: white;
       }
   }
 
@@ -24,7 +23,7 @@
     gap: 1rem;
     margin-bottom: 2rem;
     a {
-      background-color: fuchsia;
+      /* background-color: var(--primary--darker); */
       padding: 0.8rem;
       border-radius: 0.7rem;
       display: flex;
@@ -32,15 +31,14 @@
 
       &:hover{
         background-color: transparent;
-        color: aqua;
-        border-color: var(--secondary);
+        color: var(--primary--darker);
+        border-color: var(--primary--darker);
       }
     }
   }
 
   &__copyright{
-    margin-bottom: 4rem;
-    color: brown;
+    color: var(--primary--darker);
   }
 
 }

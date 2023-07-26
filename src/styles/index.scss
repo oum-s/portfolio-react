@@ -1,9 +1,16 @@
 // @import 'reset';
   @import url('https://fonts.googleapis.com/css2?family=Anton&family=Caprasimo&family=Orbitron:wght@600&family=Oswald:wght@300;400&family=Playfair+Display:wght@400;500&family=Quicksand:wght@400;600&display=swap');
 :root{
-  --primary: #272727;
-  --secondary: rgb(233, 233, 168);
-  --tertiary: #C1A4BB;
+  --primary: #F8DAEE;
+  --primary--light: #FAFFFD;
+  --primary--dark: #D9D0FF;
+  --primary--darker: #37034d;
+  --secondary: #D9F6FF;
+  --secondary--light: #E6FEFF;
+  --bg--color: #FAFFFD;
+  --txt--color: #D8C3E0;
+  --txt--color-2: #F7A8B2;
+
 
   --container-width-lg: 75%;
   --container-width-md: 85%;
@@ -26,7 +33,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: var(--primary--light);
   font-family: 'Playfair Display', Helvetica, sans-serif;
 }
 
@@ -41,28 +48,29 @@ ul{
 }
 section{
   margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 
-section > h2, section > h5{
+section > h2, section > h5, section > h3{
   text-align: center;
-  color: var(--tertiary);
+  color: var(--primary--dark);
 }
 
 section > h2{
-  color: var(--secondary);
+  color: var(--primary--dark);
   margin-bottom: 3rem;
 }
 
 .text-light {
-  color: var(--secondary);
+  color: var(--txt--color);
 }
 
 a {
-  color: white;
+  color: var(--txt--color-2);
   transition: var(--transition);
 
   &:hover{
-    color: var(--secondary);
+    color: var(--primary--dark);
   }
 }
 
@@ -71,22 +79,22 @@ a {
 .btn {
   width: max-content;
   display: inline-block;
-  color: var(--secondary);
+  color: var(--primary--darker);
   padding: 0.74rem 1.2rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  border: 1px solid var(--tertiary);
+  border: 1px solid var(--primary--darker);
   transition: var(--transition);
-
+  text-decoration: none;
   &:hover{
-    background-color: yellow;
-    color: var(--primary);
-    border-color: transparent;
+    background: linear-gradient(180deg, rgb(187, 71, 69) 0%, hsla(354, 55%, 63%, 1) 50%, rgb(255, 154, 152) 100%);
+    color: var(--primary--light);
+    border-color: var(--primary--darker);
   }
 
   &--primary{
-    background-color: burlywood;
-    color: white;
+    background-color: var(--primary);
+    color: rgb(61, 60, 60);
   }
 }
 

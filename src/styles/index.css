@@ -73,6 +73,7 @@ a:hover {
   cursor: pointer;
   border: 1px solid var(--tertiary);
   transition: var(--transition);
+  text-decoration: none;
 }
 .btn:hover {
   background-color: yellow;

@@ -9,29 +9,41 @@
   padding-bottom: 2rem;
 }
 h3{
-  color: white;
+  color: var(--primary--darker);
 }
 form{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  width: 80%;
+  width: 70%;
 }
 input, textarea{
   width: 100%;
   padding: 1.5rem;
   border-radius: 0.5rem;
   background: transparent;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--primary--darker);
   resize: none;
-  color: white;
+  color: black;
 
+}
+
+.fa-chevron-up{
+  position: absolute;
+  right: 4.3rem;
+  top: 200rem;
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--primary--darker);
 }
 
 //MEDIA QUERIES (SMALL DEVICES)
 @media screen and (max-width: 600px){
  .container.contact__container{
   width: var(--container-width-sm);
+ }
+ .fa-chevron-up{
+  display: none;
  }
 }

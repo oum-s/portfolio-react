@@ -1,8 +1,7 @@
 import './Skills.scss';
-import Lottie from "lottie-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReact, faHtml5, faCss3Alt, faSquareJs, faWordpress, faPhp } from '@fortawesome/free-brands-svg-icons';
 import {BiCheck} from 'react-icons/bi';
-import LangAnimation from './LangAnimation.json';
-// import '../Skills/Skills';
 
 
 function Skills() {
@@ -12,7 +11,12 @@ function Skills() {
 
         <div className='skills container'>
           <div className='skills__langages'>
-            <Lottie animationData={LangAnimation} />
+            <FontAwesomeIcon icon={faHtml5} />
+            <FontAwesomeIcon icon={faCss3Alt} />
+            <FontAwesomeIcon icon={faSquareJs} />
+            <FontAwesomeIcon icon={faReact} />
+            <FontAwesomeIcon icon={faWordpress} />
+            <FontAwesomeIcon icon={faPhp} />
           </div>
 
           <div className='skills__content'>

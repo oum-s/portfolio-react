@@ -4,8 +4,8 @@
 #skills{
   width: 100vw;
   height: 100vh;
-  background-color: black;
-  color: white;
+  background-color: var(--primary--light);
+  color: var(--primary--darker);
 }
 
 .skills{
@@ -13,9 +13,37 @@
   display: block;
   &__langages{
     display: flex;
-    justify-content: center;
-    align-self: center;
-    height: 40%;
+    justify-content: space-between;
+    height: 25%;
+    align-items: center;
+
+    .svg-inline--fa{
+      border-radius: 20px;
+      height: 50%;
+      transition: all .5s ease-in-out;
+      &:hover{
+        transform: scale(1.5);
+      }
+    }
+    .fa-html5{
+      color: #DD4B25;
+    }
+    .fa-css3-alt{
+      color: #146EB0;
+    }
+    .fa-square-js{
+      color: #F2DB1D;
+    }
+    .fa-react{
+      color: #5ED3F3;
+    }
+    .fa-wordpress{
+      color: #017197;
+    }
+    .fa-php{
+      color: #858EB8;
+    }
+    
   }
   &__content{
     
@@ -23,20 +51,20 @@
     justify-content:space-around;
 
     .skill{
-      background-color: pink;
+      background-color: var(--primary);
       border-radius: 0 0 2rem 2rem;
-      border: 1px solid var(--tertiary);
+      border: 1px solid var(--primary--darker);
       height: fit-content;
       transition: var(--transition);
 
       &__head{
-        background-color: red;
+        background-color: var(--primary);
         padding: 2rem;
-        border-radius: 0 0 2rem 2rem;
+        border-radius: 10px;
         box-shadow: 0 2rem 1rem rgba(0,0,0,0.1);
 
         h3{
-          color: black;
+          color: var(--primary--darker);
           font-size: 1rem;
           text-align: center;
         }

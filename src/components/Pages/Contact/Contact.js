@@ -1,5 +1,8 @@
 import './Contact.scss';
 import React, { useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+
 import emailjs from 'emailjs-com';
 // import '..Contact';
 function Contact() {
@@ -26,6 +29,11 @@ function Contact() {
         </form>
 
       </div>
+
+      <a href="#navbar">
+        <FontAwesomeIcon icon={faChevronUp} />
+      </a>
+      
     </section>
   );
 }

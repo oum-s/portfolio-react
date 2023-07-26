@@ -2,6 +2,7 @@
 import './Home.scss';
 import CallToAction from './CallToAction';
 import myPhoto from "../../../assets/I-Oum's.png";
+import TypeText from './TypeText';
 
 function Home() {
   return (
@@ -12,8 +13,7 @@ function Home() {
 
       <div className='myDescr'>
         <h1>Hello, I'm Oumi</h1>
-        <h3 className='text-light'>I'm a Web Developer</h3>
-
+        <TypeText />
         <CallToAction />
       </div>
 

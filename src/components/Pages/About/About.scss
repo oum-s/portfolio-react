@@ -10,11 +10,13 @@
   p{
     font-size: 20px;
     color: black;
+    opacity: 1;
   }
    
   .about__descr{
     padding: 10px;
-    background-color: #f3eeee;
+    background-color: var(--primary--light);
+    opacity: 0.8;
     margin-bottom: 1rem;
   }
 }
