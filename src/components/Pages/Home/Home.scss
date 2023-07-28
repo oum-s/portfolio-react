@@ -10,11 +10,17 @@
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
+  
 }
 .myPhoto, .myDescr{
   flex-direction: column;
   justify-content: center;
   width: 50%;
+
+  h3{
+    font-size: 3.5em;
+    text-transform: uppercase;
+  }
 }
 .myPhoto{
   background: transparent;

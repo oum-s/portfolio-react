@@ -1,7 +1,7 @@
 // import '../Home/Home';
 import './Home.scss';
-import CallToAction from './CallToAction';
-import myPhoto from "../../../assets/I-Oum's.png";
+// import CallToAction from './CallToAction';
+import myPhoto from "../../../assets/Oumi_icon.svg";
 import TypeText from './TypeText';
 
 function Home() {
@@ -13,11 +13,11 @@ function Home() {
 
       <div className='myDescr'>
         <h1>Hello, I'm Oumi</h1>
-        <TypeText />
-        <CallToAction />
+         <TypeText />
+        {/*<CallToAction /> */}
       </div>
 
-    <a href="#contact" className='scroll__down'>Scroll Down</a>
+    {/* <a href="#contact" className='scroll__down'>Scroll Down</a> */}
     </div>
   );
 }

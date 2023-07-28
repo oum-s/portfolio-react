@@ -23,15 +23,16 @@
     gap: 1rem;
     margin-bottom: 2rem;
     a {
-      /* background-color: var(--primary--darker); */
+      background-color: var(--primary);
       padding: 0.8rem;
       border-radius: 0.7rem;
       display: flex;
       border: 1px solid transparent;
-
+      font-size: 1.5rem;
+      color: var(--primary--darker);
       &:hover{
-        background-color: transparent;
-        color: var(--primary--darker);
+        background-color: var(--primary--darker);
+        color: var(--primary);
         border-color: var(--primary--darker);
       }
     }

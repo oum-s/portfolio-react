@@ -15,7 +15,7 @@ function TypeText() {
             typeSpeed={70}
             deleteSpeed={50}
             delaySpeed={1000}
-            words={['Student', 'Professor', 'Web Developer']}
+            words={['Web Developer']}
             onLoop={(loopCount) =>
               console.log(`Just completed loop ${loopCount}`)
             }

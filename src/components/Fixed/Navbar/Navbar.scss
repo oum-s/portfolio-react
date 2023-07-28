@@ -1,41 +1,40 @@
 @import '../../../styles/index.scss';
 
 .Navbar{
-  width: 100%;
+  margin: 1rem;
   height: 7vh;
-  background-color: var(--primary-light);
-  margin: 1rem 1rem  4rem 1rem ;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
+  background-color: var(--primary);
   border-bottom: var(--primary) solid 2px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
   .nav-start{
+    height: 75px;
+    position: absolute;
+    top: -9px;
+    left: 45px;
     .logo{
       width:100%;
       height:100%;
       display:block;
+      padding: 3px;
+      border: 3px solid var(--primary--light);
+      border-radius: 40px;
+      background-color: var(--primary--light);
     }
   }
   
   .nav-end{
-    padding-right: 6vw;
-    display: flex;
-    align-items: center;
     ul{
-      
+      display: flex;
+      flex-direction: row;
       li{
-        
+        font-size: 14px;
+        margin: 1em;
         text-decoration: none;
         list-style-type: none;
-        display: inline;
-        padding: 0 10px;
-        font-size: 20px;
         a{
-          
-          display: inline-block;
           text-decoration: none;
-          
           &:hover{
             text-decoration: underline;
           }

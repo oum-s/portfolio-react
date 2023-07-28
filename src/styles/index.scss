@@ -1,14 +1,14 @@
 // @import 'reset';
-  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Caprasimo&family=Orbitron:wght@600&family=Oswald:wght@300;400&family=Playfair+Display:wght@400;500&family=Quicksand:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caprasimo&family=Montserrat&family=Orbitron:wght@600&family=Oswald:wght@300;400&family=Playfair+Display:wght@400;500&family=Quicksand:wght@400;600&display=swap');
 :root{
   --primary: #F8DAEE;
-  --primary--light: #FAFFFD;
+  --primary--light: #FFF9F8;
   --primary--dark: #D9D0FF;
-  --primary--darker: #37034d;
+  --primary--darker: #ab6ec4;
   --secondary: #D9F6FF;
   --secondary--light: #E6FEFF;
   --bg--color: #FAFFFD;
-  --txt--color: #D8C3E0;
+  --txt--color: #390c4D;
   --txt--color-2: #F7A8B2;
 
 
@@ -34,7 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--primary--light);
-  font-family: 'Playfair Display', Helvetica, sans-serif;
+  font-family: 'Montserrat', 'Playfair Display', Helvetica, sans-serif;
 }
 
 // general styles
@@ -54,6 +54,7 @@ section{
 section > h2, section > h5, section > h3{
   text-align: center;
   color: var(--primary--dark);
+  
 }
 
 section > h2{
@@ -66,16 +67,18 @@ section > h2{
 }
 
 a {
-  color: var(--txt--color-2);
+  color: var(--txt--color);
   transition: var(--transition);
-
+  
   &:hover{
-    color: var(--primary--dark);
+    color: var(--primary--darker);
   }
 }
 
 
-
+h1{
+  font-size: 2rem;
+}
 .btn {
   width: max-content;
   display: inline-block;
@@ -87,14 +90,14 @@ a {
   transition: var(--transition);
   text-decoration: none;
   &:hover{
-    background: linear-gradient(180deg, rgb(187, 71, 69) 0%, hsla(354, 55%, 63%, 1) 50%, rgb(255, 154, 152) 100%);
+    background: linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(352, 83%, 81%, 1) 0%, hsla(283, 32%, 82%, 1) 100%);
     color: var(--primary--light);
     border-color: var(--primary--darker);
   }
 
   &--primary{
     background-color: var(--primary);
-    color: rgb(61, 60, 60);
+    color: var(--primary--darker);
   }
 }
 

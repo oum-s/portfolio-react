@@ -13,9 +13,11 @@
   display: block;
   &__langages{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
     height: 25%;
     align-items: center;
+    padding: 3rem;
 
     .svg-inline--fa{
       border-radius: 20px;
@@ -52,16 +54,16 @@
 
     .skill{
       background-color: var(--primary);
-      border-radius: 0 0 2rem 2rem;
-      border: 1px solid var(--primary--darker);
-      height: fit-content;
+      border-radius: 2rem;
+      border: 1px solid transparent;
       transition: var(--transition);
-
+      width: 40%;
       &__head{
         background-color: var(--primary);
         padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2rem 1rem rgba(0,0,0,0.1);
+        border-radius: 2rem 2rem 0 0;
+        border-bottom: solid 1px var(--primary--darker);
+        /* box-shadow: 0 2rem 1rem rgba(0,0,0,0.1); */ 
 
         h3{
           color: var(--primary--darker);
@@ -74,16 +76,17 @@
         padding: 2rem;
         list-style-type: none;
         p{
-          font-size: 0.9rem;
+          font-size: 1rem;
+          
+          font-weight: 500;
         }
         li{
-          
           display: flex;
           gap: 1rem;
           margin-bottom: 0.8rem;
         }
         .icon{
-          color: blue;
+          color: var(--primary--darker);
           margin-top: 2px;
         }
 
@@ -96,6 +99,7 @@
 
 //MEDIA QUERIES (MEDIUM DEVICES)
 @media screen and (max-width: 1024px){
+  
   .skills , #skills{
     height: fit-content;
   }
@@ -104,6 +108,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .skills__langages .svg-inline--fa{
+    height: 6rem;
+    justify-content: space-between;
   }
 }
 //MEDIA QUERIES (SMALL DEVICES)
@@ -116,6 +124,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .skills__langages .svg-inline--fa {
+    height: 3rem;
   }
 }
 

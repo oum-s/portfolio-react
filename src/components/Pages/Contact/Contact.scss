@@ -25,17 +25,21 @@ input, textarea{
   background: transparent;
   border: 2px solid var(--primary--darker);
   resize: none;
-  color: black;
+  color: var(--primary--darker);
 
 }
 
 .fa-chevron-up{
   position: absolute;
-  right: 4.3rem;
+  right: 0;
   top: 200rem;
   font-weight: 300;
   font-size: 2rem;
   color: var(--primary--darker);
+  border-bottom-left-radius: 10px;
+  background-color: var(--primary);
+  border-top-left-radius: 10px;
+  padding: 5px 0 5px 5px ;
 }
 
 //MEDIA QUERIES (SMALL DEVICES)

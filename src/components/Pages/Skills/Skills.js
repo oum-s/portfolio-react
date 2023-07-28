@@ -22,28 +22,26 @@ function Skills() {
           <div className='skills__content'>
             <article className='skill'>
               <div className='skill__head'>
-                <h3>Web Development</h3>
+                <h3>Compétences techniques</h3>
               </div>
 
               <ul className='skill_list'>
                 <li>
-                  <BiCheck className='skill__ list icon' /><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <BiCheck className='skill__ list icon' /><p>Gestion de projet
+</p>
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Veille technologique</p>
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Etudes de marché
+</p>
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </li>
-                <li>
-                  <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Modification d'un thème Wordpress.</p>
                 </li>
               </ul>
             </article>
@@ -56,23 +54,23 @@ function Skills() {
               <ul className='skill_list'>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Rédaction d'articles</p>
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Référencement Naturel (SEO)</p>
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Optimisation d'un site via le plugin Rank Math</p>
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>l. Maintien d’une communauté sur les réseaux sociaux</p>
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Réalisation de l' identité graphique d'un site</p>
                 </li>
               </ul>
             </article>

@@ -1,8 +1,7 @@
 import './Navbar.scss';
-import logo from '../../../assets/logo.jpg';
+import logo from '../../../assets/Oumi_icon.svg';
 import '../Navbar/Navbar';
 import { useState } from 'react';
-//import { NavLink, Link} from 'react-router-dom';
 
 
 function Navbar() {
