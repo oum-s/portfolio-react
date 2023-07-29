@@ -18,5 +18,13 @@
     background-color: var(--primary--light);
     opacity: 0.8;
     margin-bottom: 1rem;
+    margin-left: 7rem;
   }
+}
+
+//MEDIA QUERIES (SMALL DEVICES)
+@media screen and (max-width: 600px){
+#about .about__descr {
+  margin-left: 0;
+}
 }

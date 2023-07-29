@@ -1,7 +1,7 @@
 // import '../Home/Home';
 import './Home.scss';
 // import CallToAction from './CallToAction';
-import myPhoto from "../../../assets/Oumi_icon.svg";
+import myPhoto from "../../../assets/bgImg.jpg";
 import TypeText from './TypeText';
 
 function Home() {
