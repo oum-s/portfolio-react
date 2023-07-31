@@ -66,7 +66,7 @@ function Skills() {
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />
-                  <p>l. Maintien d’une communauté sur les réseaux sociaux</p>
+                  <p>Maintien d’une communauté sur les réseaux sociaux</p>
                 </li>
                 <li>
                   <BiCheck className='skill__ list icon' />

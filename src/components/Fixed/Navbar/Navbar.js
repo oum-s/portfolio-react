@@ -4,7 +4,7 @@ import '../Navbar/Navbar';
 import { useState } from 'react';
 
 // usestate pour dire que le toggle disparait par defaut , si le showtoggle est true on l'active sinon laisse à false
-function Navbar() {
+function Navbar({show, setShow}) {
   // useState pour l'affichage des liens de page
   const [activeNav, setActiveNav] = useState('#');
   // useState pour dire que le menu est fermé par défaut
@@ -15,7 +15,8 @@ function Navbar() {
     setShowLinks(!showLinks)
   }
 
-  // navbar qui disparait lorsqu'on scroll
+  
+  
   return (
     // Si on a la variable showLinks true on lui met la classe show-nav sinon hide-nav
     <div className='Navbar'>
@@ -42,9 +43,13 @@ function Navbar() {
 
         </ul>
       <button className='navbar__burger'>
-        <span className='burger-bar' onClick={handleShowLinks}></span>
+        <span className='burger-bar' onClick={ () => handleShowLinks()}></span>
+      </button>
+      <button className={`navbar__burger ${show ? "none" : "display"} `} >
+        <span className='burger-bar' onClick={ () => handleShowLinks()}></span>
       </button>
       </div>
+      
 
     </div>
   );

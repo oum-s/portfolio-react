@@ -1,18 +1,20 @@
 @import '../../../styles/index.scss';
 
 .Navbar{
-  margin: 1rem;
+  margin: 2rem;
   height: 7vh;
   background-color: var(--primary);
   border-bottom: var(--primary) solid 2px;
   display: flex;
   justify-content: flex-end;
   position: relative;
+
   .nav-start{
     height: 90px;
     position: fixed;
-    top: 3px;
+    top: 8px;
     left: 45px;
+    
     .logo{
       width:100%;
       height:100%;
@@ -27,13 +29,16 @@
   .nav-end{
     display: flex;
     align-items: center;
+
     ul{
       display: flex;
       flex-direction: row;
+
       li{
         margin: 1em;
         text-decoration: none;
         list-style-type: none;
+
         a{
           font-size: 16px;
           text-decoration: none;
@@ -45,6 +50,7 @@
     }
   }
 }
+//toggle menu
 .navbar__burger{
   width: 40px;
   height: 40px;
@@ -53,25 +59,25 @@
   color: inherit;
   display: none;
 }
-
-.navbar__burger-test{
-  width: 40px;
-  height: 40px;
-  background-color: red;
-  z-index: 3;
-  background: transparent;
-  border: transparent;
-  color: inherit;
+.display{
+  display: block;
+  background-color: white;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
 }
 
 //MEDIA QUERIES (SMALL DEVICES)
 @media screen and (max-width: 600px){
 
   .Navbar{
-    z-index: 2;
+    z-index: 1;
 
     .nav-start{
-      display: none;
+      height: 60px;
+      position: absolute;
+      top: -7px;
+      left: 16px;
     }
     
     .nav-end {
@@ -105,13 +111,12 @@
       
       .navbar__burger{
         display: block;
-        position: fixed;
-        top: 1.5rem;
-        right: 2rem;
+        position: absolute;
+        top: 0rem;
+        right: 0rem;
         &:hover{
           cursor: pointer;
         }
-
 
         .burger-bar, .burger-bar:before, .burger-bar:after{
           display: block;
