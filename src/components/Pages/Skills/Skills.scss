@@ -12,14 +12,16 @@
   height: 90%;
   display: block;
   &__langages{
+    
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: 25%;
+    height: 35%;
     align-items: center;
     padding: 3rem;
 
     .svg-inline--fa{
+      cursor: pointer;
       border-radius: 20px;
       height: 50%;
       transition: all .5s ease-in-out;

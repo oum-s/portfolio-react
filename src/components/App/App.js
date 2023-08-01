@@ -1,7 +1,5 @@
-// import PropTypes from "prop-types";
-// import { Routes, Route} from 'react-router-dom';
 import './App.scss';
-import Navbar from '../Fixed/Navbar/Navbar';
+import Header from '../Fixed/Header/Header';
 import Home from '../Pages/Home/Home';
 import About from '../Pages/About/About';
 import Skills from '../Pages/Skills/Skills';
@@ -10,43 +8,28 @@ import Footer from '../Fixed/Footer/Footer';
 import { useState } from 'react';
 
 function App() {
-  /* onScroll={controlNavbar} */
-    // navbar qui disparait lorsqu'on scroll
-  const [show, setShow] = useState(true)
-  // const controlNavbar = () => {
-  //   if (window.scrollY > 100) {
-  //   setShow(false)
-  //   } else {
-  //   setShow(true)
-  //   }
-  // } 
+  // useState lié au scroll
+  const [show, setShow] = useState(false)
 
-  // window.addEventListener('scroll', () => {
-  //   if (window.scrollY > 100) {
-  //     setShow(false)
-  //     } else {
-  //     setShow(true)
-  //   }
-  //   console.log("it's Ok");
-  // })
+  // useState lié au onClick de la nav en lgScreen
+  const [fixed, setFixed] = useState(false);
 
-let derniere_position_de_scroll_connue = 0;
-
-window.addEventListener("scroll", function (e) {
-  derniere_position_de_scroll_connue = window.scrollY;
-
-  if (derniere_position_de_scroll_connue > 100) {
-    setShow(false)
+  let scrollPosition = 0;
+  // Si on dépasse 100px dans la position l'état est true 
+  window.addEventListener("scroll", function (e) {
+    scrollPosition = window.scrollY;
+    setFixed(false)
+    if (scrollPosition > 100) {
+      setShow(true)
     } else {
-    setShow(true)
-  }
-  console.log("it's Ok");
-});
+      setShow(false)
+    }
+  });
 
 
   return (
     <div className="App">
-      <Navbar show={show} setShow={setShow}/>
+      <Header show={show} fixed={fixed} setFixed={setFixed}/>
         <Home />
         <About />
         <Skills />

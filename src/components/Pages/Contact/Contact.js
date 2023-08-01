@@ -30,7 +30,7 @@ function Contact() {
 
       </div>
 
-      <a href="#navbar">
+      <a href="#Header">
         <FontAwesomeIcon icon={faChevronUp} />
       </a>
       

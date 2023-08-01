@@ -36,7 +36,36 @@ body {
   background-color: var(--primary--light);
   font-family: 'Montserrat', 'Playfair Display', Helvetica, sans-serif;
 }
-
+// Animations
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+}
+//fade burger menu
+@keyframes fade-in{
+  0% {
+     opacity: 0;
+     transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 // general styles
 .container{
   width: var(--container-width-lg);
@@ -107,7 +136,7 @@ img{
   object-fit: cover;
 }
 
-// @mixin burger-bar {
+// @mixin Navbar__burger__bar {
   
 // }
 
