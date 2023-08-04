@@ -30,7 +30,7 @@ function Contact() {
 
       </div>
 
-      <a href="#Header">
+      <a href="#Home">
         <FontAwesomeIcon icon={faChevronUp} />
       </a>
       

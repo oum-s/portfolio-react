@@ -1,23 +1,16 @@
 @import '../../../styles/index.scss';
 
-#fixed{
-  /* animation: slide-right 1s linear forwards; */
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  right: 0px;
-  animation: slide-left 1s linear forwards;
-  height: 4rem;
-  margin: 1rem auto;
-}
 
+#bg-btn{
+  background-color: var(--primary);
+}
 .Header{
   .nav__logo{
     height: 7rem;
     position: fixed;
-    top: 1rem;
+    top: 0.5rem;
     left: 2rem;
-
+    z-index: 3;
     
     .logo{
       width:100%;
@@ -39,6 +32,7 @@
       background-color: var(--primary);
 
       &__container{
+        margin: 0 25vh;
       ul{
         display: flex;
         flex-direction: row;
@@ -58,6 +52,7 @@
         }
       }
       }
+      
       &__burger{
         display: none;
       }
@@ -68,12 +63,13 @@
 // Navbar Toggle Large Screen
 .Navbar__burger__lg{
   position: fixed;
-  width: 4rem;
-  height: 4rem;
+  width: 10vh;
+  height: 7vh;
   top: 2rem;
-  right: 0rem;
+  right: 1rem;
   background-color: transparent;
   border: transparent;
+  z-index: 2;
   display: none;
 }
 .display{
@@ -82,17 +78,18 @@
 }
   
 .Navbar__burger__bar, .Navbar__burger__bar::before, .Navbar__burger__bar::after{
-    display: block;
-    width: 3rem;
-    height: 3px;
-    position: relative;
-    border-radius: 3px;
-    background: var(--txt--color);
-    transition: all .5s ease-in-out;
+  margin: 0 auto;
+  display: block;
+  width: 3rem;
+  height: 3px;
+  position: relative;
+  border-radius: 3px;
+  background: var(--txt--color);
+  transition: all 0.5s ease-in-out;
   }
 
 .Navbar__burger__bar{
-  &::before{
+  &::before{   
     transform: translateY(-12px);
   }
   &::after{
@@ -110,7 +107,20 @@
 }
 
 // lors du show-nav
-.Header .Navbar .Navbar__container.show-nav .Navbar__burger__lg{
+.Header.show-nav{
+  .Navbar#fixed{
+    /* animation: slide-right 1s linear forwards; */
+    z-index: 2;
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    animation: slide-left 1s linear forwards;
+    height: 7vh;
+    margin: 1rem auto;
+    width: 90%;
+  }
+  .Navbar__burger__lg{
+
     &::after{
       transition: fade-out 1s linear;
     }
@@ -124,10 +134,11 @@
     &__bar::after{
       transform: rotate(-45deg);
     }
+    }
   }
 }
-//MEDIA QUERIES (SMALL DEVICES)
-@media screen and (max-width: 600px){
+//MEDIA QUERIES (MEDIUM AND SMALL DEVICES)
+@media screen and (max-width: 992px){
 
   .Header{
     .nav__logo{
@@ -138,38 +149,54 @@
     }
     
     .Navbar{
-      /* .display{
+      background-color: transparent;
+      .display{
         display: none;
         visibility: hidden;
-    } enlever car lors du click et reclick sur le toggle sm la classe reste none*/
-        .Navbar__links{
-          position: fixed;
-          visibility: hidden;
+      } 
+    // enlever car lors du click et reclick sur le toggle sm la classe reste none
+      .Navbar__links{
+        position: fixed;
+        visibility: hidden;
 
-          &__item {
-            transform: translateY(100vh);
-          }
+        &__item {
+          transform: translateY(100vh);
         }
-        //toggle menu
-        &__burger{
-          z-index: 2;
-          width: 4rem;
-          height: 4rem;
-          top: 2rem;
-          right: 0rem;
-          background: transparent;
-          border: transparent;
-          color: inherit;
-          display: block;
-          position: fixed;
-          &:hover{
-            cursor: pointer;
-          }
+      }
+      //toggle menu
+      &__burger{
+        z-index: 2;
+        width: 4rem;
+        height: 4rem;
+        top: 2rem;
+        right: 0rem;
+        background: transparent;
+        border: transparent;
+        color: inherit;
+        display: block;
+        position: fixed;
+        &:hover{
+          cursor: pointer;
         }
+      }
+    }
+
+    .Navbar__burger__lg{
+      display: none;
     }
   }
   
-  .Header .Navbar .Navbar__container.show-nav {
+  .Header.show-nav{
+    .Navbar#fixed{
+      /* z-index: 0; */
+      position: relative;
+      animation: initial;
+      height: initial;
+      margin: initial;
+      width: initial;
+    }
+  }
+  .Header.show-nav .Navbar .Navbar__container {
     .Navbar__links {
       z-index: 2;
       height: 100vh;

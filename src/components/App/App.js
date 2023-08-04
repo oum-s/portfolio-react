@@ -12,13 +12,14 @@ function App() {
   const [show, setShow] = useState(false)
 
   // useState lié au onClick de la nav en lgScreen
-  const [fixed, setFixed] = useState(false);
-
+  /* const [fixed, setFixed] = useState(false); */
+   // useState pour dire que le menu est fermé par défaut
+   const [showLinks, setShowLinks] = useState(false);
   let scrollPosition = 0;
   // Si on dépasse 100px dans la position l'état est true 
   window.addEventListener("scroll", function (e) {
     scrollPosition = window.scrollY;
-    setFixed(false)
+    setShowLinks(false)
     if (scrollPosition > 100) {
       setShow(true)
     } else {
@@ -26,10 +27,9 @@ function App() {
     }
   });
 
-
   return (
     <div className="App">
-      <Header show={show} fixed={fixed} setFixed={setFixed}/>
+      <Header show={show} showLinks={showLinks} setShowLinks={setShowLinks}/>
         <Home />
         <About />
         <Skills />
