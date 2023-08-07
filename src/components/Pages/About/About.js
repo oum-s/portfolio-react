@@ -2,14 +2,14 @@
 import './About.scss';
 import bgImg from '../../../assets/desk2.jpg';
 
-function About() {
+function About(showLinks) {
   return (
     <section id="about"
     style={{ backgroundImage: `url(${bgImg})` }}>
 
       <h3>About me</h3>
 
-        <section className="about__descr">
+        <section className='about__descr' id={`${showLinks ? "opacity" : " "}`}>
           <p>
         Hello, c'est Oumi ! Et si je partageais un peu mon histoire ? 
         <br /> <br />

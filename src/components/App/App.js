@@ -20,18 +20,19 @@ function App() {
   window.addEventListener("scroll", function (e) {
     scrollPosition = window.scrollY;
     setShowLinks(false)
-    if (scrollPosition > 100) {
-      setShow(true)
+    if (scrollPosition < 100) {
+      setShow(false);
     } else {
-      setShow(false)
+      setShow(true)
     }
   });
+  
 
   return (
     <div className="App">
-      <Header show={show} showLinks={showLinks} setShowLinks={setShowLinks}/>
+      <Header setShow={setShow} show={show} showLinks={showLinks} setShowLinks={setShowLinks}/>
         <Home />
-        <About />
+        <About showLinks={showLinks}/>
         <Skills />
         <Contact />
       <Footer />

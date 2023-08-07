@@ -1,10 +1,11 @@
 import './Header.scss';
 import logo from '../../../assets/Oumi_icon.svg';
 import './Header';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function Header({show, showLinks, setShowLinks}) {
+  
   // useState pour repérer le lien actif dans la barre menu
   const [activeNav, setActiveNav] = useState('#');
   
@@ -16,21 +17,25 @@ function Header({show, showLinks, setShowLinks}) {
 
   const hide = () => setIsOpen(false);
 
- /*  // useState pour dire que le menu est fermé par défaut
-  const [showLinks, setShowLinks] = useState(false); */
   const handleShowLinks = () => {
   // Si le showLinks est a true on l'active sinon on le laisse à false
     setShowLinks(!showLinks)
   }
-  /* const handleFixed = () => {
-    // Si le showLinks est a true on l'active sinon on le laisse à false
-      setFixed(fixed)
-    } */
-  /* console.log('état nav', fixed); */
-  console.log('etat showlinks', showLinks)
+  
+  const [scrollSuperior, setScrollSuperior] = useState(false);
+
+  //permet d'effectuer notre effet une fois le rendu du composant terminé
+  // lorsqu'on dépasse 100px au scroll on peut ajouter une classe
+  useEffect(() => {
+      const handleScroll = () => {
+          setScrollSuperior(window.scrollY > 100);
+      }
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll);
+  },[])
 
   return (
-    <div className='container'>
+    <div className={`${showLinks && 'myContainer'}`} id='Header'>
       {/* // Si on a la variable showLinks true on lui met la classe show-nav sinon hide-nav */}
       <div className={`Header ${showLinks ? "show-nav" : "hide-nav"}`}>
 
@@ -43,7 +48,7 @@ function Header({show, showLinks, setShowLinks}) {
         </div>
 
         {/* Si état où la navbar doit être fixe en lg applique la classe fixed*/}
-        <div className='Navbar' id={`${showLinks ? "fixed" : "not-fixed"}`}>
+        <div className={`Navbar ${scrollSuperior ? " " : "myNavbar"}`} id={`${showLinks ? "fixed" : "not-fixed"}`}>
 
         {/*  Ouvre le menu et affiche les liens */}
           <div className='Navbar__container'>
@@ -85,6 +90,7 @@ function Header({show, showLinks, setShowLinks}) {
           </button>
 
       </div>
+    
     </div>
   );
 }

@@ -23,14 +23,14 @@ function Contact() {
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name="name" placeholder='Your Full Name' required />
           <input type="text" name="email" placeholder='Your E-Mail' required />
-          <textarea name="message" rows="7" placeholder='Your Message' required> </textarea>
+          <textarea name="message" defaultValue="This is your message." rows="7" placeholder='Your Message' required> </textarea>
           
           <button type="submit" className='btn btn--primary'>Send A Message</button>
         </form>
 
       </div>
 
-      <a href="#Home">
+      <a href="#Header">
         <FontAwesomeIcon icon={faChevronUp} />
       </a>
       

@@ -23,8 +23,15 @@
 }
 
 //MEDIA QUERIES (SMALL DEVICES)
-@media screen and (max-width: 992px){
-#about .about__descr {
+@media screen and (max-width: 801px){
+#about{
+  .about__descr {
   margin-right: 4vh;
-}
+  margin-left: 4vh;
+  }
+  #opacity{
+    opacity: initial;
+  }
+} 
+
 }

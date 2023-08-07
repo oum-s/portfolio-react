@@ -59,6 +59,9 @@
 
 //MEDIA QUERIES (SMALL DEVICES)
 @media screen and (max-width: 600px){
+  .Home.container{
+    z-index: -1;
+  }
   .nav{
     height: 100vh;
   }
