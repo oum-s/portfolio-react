@@ -4,7 +4,7 @@
   height: 85vh;
     overflow: hidden;
     background-color: transparent;
-    color: var(--txt--color-2);
+    color: var(----primary);
     display: flex;
     align-items: center;
     /* text-align: center; */
@@ -13,10 +13,11 @@
   
 }
 .myDescr{
+  color: var(--secondary);
   position: absolute;
-    TOP: 16rem;
-    left: 2rem;
-    text-align: justify;
+  TOP: 16rem;
+  left: 2rem;
+  text-align: justify;
 }
 .myPhoto, .myDescr{
   flex-direction: column;

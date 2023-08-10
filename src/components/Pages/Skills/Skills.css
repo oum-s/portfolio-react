@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Montserrat+Subrayada&family=Playfair+Display:ital,wght@0,400;1,500&display=swap");
+:root {
+  --primary: #fff4fb;
+  --primary--light: #ffffff;
+  --primary--dark: rgb(200, 72, 97);
+  --secondary: #8d8c8b;
+  --secondary--lighter: #e9e5e2;
+  --txt--color: #c84861;
+  --container-width-lg: 75%;
+  --container-width-md: 85%;
+  --container-width-sm: 90%;
+  --transition: all 400ms ease;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary--light);
+  font-family: "Montserrat", "Playfair Display", Helvetica, sans-serif;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+section {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+
+section > h2, section > h5, section > h3 {
+  text-align: center;
+  color: var(--secondary);
+  font-size: 25px;
+  font-family: "Lobster";
+  /* text-shadow: 3px 1px 2px var(--txt--color), 3px 2px 4px rgb(85, 26, 139); */
+}
+
+section > h2 {
+  color: var(--txt--color);
+  margin-bottom: 3rem;
+}
+
+.text-light {
+  color: var(--txt--color);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--secondary);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.btn {
+  width: -moz-max-content;
+  width: max-content;
+  display: inline-block;
+  color: var(--txt--color);
+  padding: 0.74rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid var(--txt--color);
+  transition: var(--transition);
+  text-decoration: none;
+}
+.btn:hover {
+  background: linear-gradient(0deg, hsl(0, 0%, 100%) 0%, hsl(352, 83%, 81%) 0%, hsl(283, 32%, 82%) 100%);
+  color: var(--primary--light);
+  border-color: var(--txt--color);
+}
+.btn--primary {
+  background-color: var(--primary);
+  color: var(--txt--color);
+}
+
+img {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: var(--container-width-md);
+  }
+  section {
+    margin-top: 6rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+  section > h2 {
+    margin-bottom: 2rem;
+  }
+}
+.special {
+  font-size: calc(1em + 5vmin);
+  font-weight: 900;
+  color: rgb(200, 72, 97);
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: white;
+  --stroke-color: lightblue;
+  text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color), calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke)) 0px var(--stroke-color);
+  /* for browsers that support spread, added in
+  https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
+  currently: none browsers! none of them!
+  I can't even find a test: 
+  https://wpt.fyi/results/css/css-text-decor */
+}
+@supports (text-shadow: 1px 1px 1px 1px black) {
+  .special h5 {
+    text-shadow: var(--x-offset) var(--y-offset) 0px 0px var(--background-color), var(--x-offset) var(--y-offset) var(--stroke) 0px var(--stroke-color);
+  }
+}
+
+#skills {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary--light);
+  color: var(--secondary);
+}
+
+.skills {
+  height: 90%;
+  display: block;
+}
+.skills__langages {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 35%;
+  align-items: center;
+  padding: 3rem;
+}
+.skills__langages .svg-inline--fa {
+  cursor: pointer;
+  border-radius: 20px;
+  height: 50%;
+  transition: all 0.5s ease-in-out;
+}
+.skills__langages .svg-inline--fa:hover {
+  transform: scale(1.5);
+}
+.skills__langages .fa-html5 {
+  color: #DD4B25;
+}
+.skills__langages .fa-css3-alt {
+  color: #146EB0;
+}
+.skills__langages .fa-square-js {
+  color: #F2DB1D;
+}
+.skills__langages .fa-react {
+  color: #5ED3F3;
+}
+.skills__langages .fa-wordpress {
+  color: #017197;
+}
+.skills__langages .fa-php {
+  color: #858EB8;
+}
+.skills__content {
+  display: flex;
+  justify-content: space-around;
+}
+.skills__content .skill {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--primary--light);
+  border-radius: 2rem;
+  border: 1px solid var(--primary);
+  transition: var(--transition);
+  width: 40%;
+}
+.skills__content .skill__head {
+  background-color: var(--primary--light);
+  padding: 2rem;
+  border: 1px solid var(--primary);
+  border-radius: 2rem 2rem 0 0;
+  border-bottom: solid 1px var(--txt--color);
+  /* box-shadow: 0 2rem 1rem rgba(0,0,0,0.1); */
+}
+.skills__content .skill__head h3 {
+  font-size: 1rem;
+  text-align: center;
+}
+.skills__content .skill ul {
+  padding: 2rem;
+  list-style-type: none;
+}
+.skills__content .skill ul p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.skills__content .skill ul li {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+.skills__content .skill ul .icon {
+  /* color: var(--txt--color); */
+  margin-top: 2px;
+}
+
+@media screen and (max-width: 1024px) {
+  .skills, #skills {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .skills__content {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .skills__langages .svg-inline--fa {
+    height: 6rem;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 600px) {
+  .skills, #skills {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .skills__content {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .skills__langages .svg-inline--fa {
+    height: 3rem;
+  }
+  .skills__content .skill {
+    width: 90%;
+  }
+}/*# sourceMappingURL=Skills.css.map */

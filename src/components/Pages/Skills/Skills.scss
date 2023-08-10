@@ -1,11 +1,60 @@
 @import '../../../styles/index.scss';
 
+.special{
+  font-size: calc( 1em + 5vmin );
+  font-weight: 900;
+  color: rgb(200, 72, 97);
+  
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: white;
+  --stroke-color: lightblue;
+
+  text-shadow: 
+    
+    var(--x-offset)
+    var(--y-offset)
+    0px
+    var(--background-color), 
+    
+    calc( var(--x-offset) - var(--stroke) )
+    calc( var(--y-offset) + var(--stroke) )
+    0px
+    var(--stroke-color);
+  
+
+/* for browsers that support spread, added in
+https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
+currently: none browsers! none of them!
+I can't even find a test: 
+https://wpt.fyi/results/css/css-text-decor */
+@supports ( text-shadow: 1px 1px 1px 1px black ) {
+  h5 {
+    text-shadow:
+      
+      var(--x-offset)
+      var(--y-offset)
+      0px
+      0px
+      var(--background-color), 
+      
+      var(--x-offset) 
+      var(--y-offset)
+      var(--stroke)
+      0px
+      var(--stroke-color);
+    
+  }
+}
+}
 
 #skills{
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: var(--primary--light);
-  color: var(--primary--darker);
+  color: var(--secondary);
 }
 
 .skills{
@@ -55,20 +104,21 @@
     justify-content:space-around;
 
     .skill{
-      background-color: var(--primary);
+      box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+      background-color: var(--primary--light);
       border-radius: 2rem;
-      border: 1px solid transparent;
+      border: 1px solid var(--primary);
       transition: var(--transition);
       width: 40%;
       &__head{
-        background-color: var(--primary);
+        background-color: var(--primary--light);
         padding: 2rem;
+        border: 1px solid var(--primary);
         border-radius: 2rem 2rem 0 0;
-        border-bottom: solid 1px var(--primary--darker);
+        border-bottom: solid 1px var(--txt--color);
         /* box-shadow: 0 2rem 1rem rgba(0,0,0,0.1); */ 
 
         h3{
-          color: var(--primary--darker);
           font-size: 1rem;
           text-align: center;
         }
@@ -88,7 +138,7 @@
           margin-bottom: 0.8rem;
         }
         .icon{
-          color: var(--primary--darker);
+          /* color: var(--txt--color); */
           margin-top: 2px;
         }
 

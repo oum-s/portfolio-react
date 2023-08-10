@@ -1,7 +1,7 @@
 @import '../../../styles/index.scss';
 
 .footer{
-  background-color: var(--primary--darker);
+  background-color: rgb(200, 72, 97);
   padding: 2rem 0;
   text-align: center;
   font-size: 0.9rem;
@@ -30,17 +30,17 @@
       display: flex;
       border: 1px solid transparent;
       font-size: 1.5rem;
-      color: var(--primary--darker);
+      color: var(--txt--color);
       &:hover{
-        background-color: var(--primary--darker);
+        background-color: var(--txt--color);
         color: var(--primary);
-        border-color: var(--primary--darker);
+        border-color: var(--txt--color);
       }
     }
   }
 
   &__copyright{
-    color: var(--primary--darker);
+    color: var(--txt--color);
   }
 
 }

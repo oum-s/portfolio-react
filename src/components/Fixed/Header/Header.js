@@ -21,7 +21,7 @@ function Header({show, showLinks, setShowLinks}) {
   // Si le showLinks est a true on l'active sinon on le laisse à false
     setShowLinks(!showLinks)
   }
-  
+  console.log(showLinks)
   const [scrollSuperior, setScrollSuperior] = useState(false);
 
   //permet d'effectuer notre effet une fois le rendu du composant terminé
@@ -48,7 +48,7 @@ function Header({show, showLinks, setShowLinks}) {
         </div>
 
         {/* Si état où la navbar doit être fixe en lg applique la classe fixed*/}
-        <div className={`Navbar ${scrollSuperior ? " " : "myNavbar"}`} id={`${showLinks ? "fixed" : "not-fixed"}`}>
+        <div className={`Navbar ${scrollSuperior ? "noNavbar " : "myNavbar"}`} id={`${showLinks ? "fixed" : "not-fixed"}`}>
 
         {/*  Ouvre le menu et affiche les liens */}
           <div className='Navbar__container'>

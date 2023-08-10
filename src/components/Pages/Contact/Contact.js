@@ -1,4 +1,5 @@
 import './Contact.scss';
+import {useState} from 'react'
 import React, { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +7,10 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import emailjs from 'emailjs-com';
 // import '..Contact';
 function Contact() {
+  function scrollToTheTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  const [text, setText] = useState('Your Message')
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -15,24 +20,24 @@ function Contact() {
   };
   return (
     <section id="contact">
-      <h5> Get in Touch</h5>
-      <h3> Contact Me</h3>
+      <h3> Get in Touch</h3>
 
       <div className='container contact__container'>
 
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name="name" placeholder='Your Full Name' required />
           <input type="text" name="email" placeholder='Your E-Mail' required />
-          <textarea name="message" defaultValue="This is your message." rows="7" placeholder='Your Message' required> </textarea>
+          <textarea name="message" value={text} onChange={(e) => setText(e.target.value)} rows="7" placeholder='Your Message' required> </textarea>
           
           <button type="submit" className='btn btn--primary'>Send A Message</button>
         </form>
 
       </div>
 
-      <a href="#Header">
-        <FontAwesomeIcon icon={faChevronUp} />
-      </a>
+      <section className='fa-chevron-up'>
+          <FontAwesomeIcon icon={faChevronUp} 
+          onClick={()=> scrollToTheTop() }/>
+      </section>
       
     </section>
   );

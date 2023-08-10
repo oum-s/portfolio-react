@@ -1,15 +1,12 @@
 // @import 'reset';
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caprasimo&family=Montserrat&family=Orbitron:wght@600&family=Oswald:wght@300;400&family=Playfair+Display:wght@400;500&family=Quicksand:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Montserrat+Subrayada&family=Playfair+Display:ital,wght@0,400;1,500&display=swap');
 :root{
-  --primary: #F8DAEE;
-  --primary--light: #FFF9F8;
-  --primary--dark: #D9D0FF;
-  --primary--darker: #ab6ec4;
-  --secondary: #D9F6FF;
-  --secondary--light: #E6FEFF;
-  --bg--color: #FAFFFD;
-  --txt--color: #390c4D;
-  --txt--color-2: #F7A8B2;
+  --primary: #fff4fb;
+  --primary--light: #ffffff;
+  --primary--dark: rgb(200, 72, 97);
+  --secondary: #8d8c8b;
+  --secondary--lighter: #e9e5e2;
+  --txt--color: #c84861;
 
 
   --container-width-lg: 75%;
@@ -91,13 +88,17 @@ section{
 }
 
 section > h2, section > h5, section > h3{
+
   text-align: center;
-  color: var(--primary--dark);
+  color: var(--secondary);
+  font-size: 25px;
+  font-family: 'Lobster';
+  /* text-shadow: 3px 1px 2px var(--txt--color), 3px 2px 4px rgb(85, 26, 139); */
   
 }
 
 section > h2{
-  color: var(--primary--dark);
+  color: var(--txt--color);
   margin-bottom: 3rem;
 }
 
@@ -106,11 +107,10 @@ section > h2{
 }
 
 a {
-  color: var(--txt--color);
-  transition: var(--transition);
   
   &:hover{
-    color: var(--primary--darker);
+    text-decoration: underline;
+    color: var(--secondary);
   }
 }
 
@@ -121,22 +121,22 @@ h1{
 .btn {
   width: max-content;
   display: inline-block;
-  color: var(--primary--darker);
+  color: var(--txt--color);
   padding: 0.74rem 1.2rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  border: 1px solid var(--primary--darker);
+  border: 1px solid var(--txt--color);
   transition: var(--transition);
   text-decoration: none;
   &:hover{
     background: linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(352, 83%, 81%, 1) 0%, hsla(283, 32%, 82%, 1) 100%);
     color: var(--primary--light);
-    border-color: var(--primary--darker);
+    border-color: var(--txt--color);
   }
 
   &--primary{
     background-color: var(--primary);
-    color: var(--primary--darker);
+    color: var(--txt--color);
   }
 }
 
