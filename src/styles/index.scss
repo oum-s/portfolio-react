@@ -1,9 +1,9 @@
 // @import 'reset';
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Montserrat+Subrayada&family=Playfair+Display:ital,wght@0,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Montserrat+Subrayada&family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,500&display=swap');
 :root{
   --primary: #fff4fb;
   --primary--light: #ffffff;
-  --primary--dark: rgb(200, 72, 97);
+  /* --primary--dark: rgb(200, 72, 97); */
   --secondary: #8d8c8b;
   --secondary--lighter: #e9e5e2;
   --txt--color: #c84861;
@@ -86,7 +86,45 @@ section{
   margin-top: 8rem;
   margin-bottom: 8rem;
 }
+.special{
+  font-size: calc( 1em + 2vmin );
+  font-weight: 900;
+  color: rgb(200, 72, 97);
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: white;
+  --stroke-color: lightblue;
 
+  text-shadow: 
+    var(--x-offset)
+    var(--y-offset)
+    0px
+    var(--background-color), 
+    calc( var(--x-offset) - var(--stroke) )
+    calc( var(--y-offset) + var(--stroke) )
+    0px
+    var(--stroke-color);
+
+    @supports ( text-shadow: 1px 1px 1px 1px black ) {
+      h3 {
+        text-shadow:
+          
+          var(--x-offset)
+          var(--y-offset)
+          0px
+          0px
+          var(--background-color), 
+          
+          var(--x-offset) 
+          var(--y-offset)
+          var(--stroke)
+          0px
+          var(--stroke-color);
+        
+      }
+    }
+}
 section > h2, section > h5, section > h3{
 
   text-align: center;
@@ -106,15 +144,35 @@ section > h2{
   color: var(--txt--color);
 }
 
-a {
-  
-  &:hover{
-    text-decoration: underline;
-    color: var(--secondary);
-  }
-}
 
-
+li > a{
+            position: relative;
+            font-family: 'Montserrat',Helvetica, sans-serif;  ;
+            color: var(--txt--color);
+            font-size: 1.1rem;
+            text-decoration: none;
+            padding-bottom: 3px;
+            /* &:hover{
+              text-decoration:underline;
+              
+            } */
+            &::after{
+              content : "";
+              position : absolute;
+              width : 100%;
+              height : 2px;
+              background-color: var(--txt--color);
+              bottom: 0;
+              left: 0;
+              transform : scaleX(0);
+              transform-origin: bottom right;
+              transition : transform 0.25s linear;
+            }
+            &:hover::after {
+              transform-origin: bottom left;
+              transform: scaleX(1);
+            }
+          }
 h1{
   font-size: 2rem;
 }
@@ -129,7 +187,7 @@ h1{
   transition: var(--transition);
   text-decoration: none;
   &:hover{
-    background: linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(352, 83%, 81%, 1) 0%, hsla(283, 32%, 82%, 1) 100%);
+    background: #c8486294;
     color: var(--primary--light);
     border-color: var(--txt--color);
   }
@@ -162,6 +220,12 @@ img{
 }
 //MEDIA QUERIES (SMALL DEVICES)
 @media screen and (max-width: 600px){
+  #about, #skills, #contact, footer{
+    height: initial;
+  }
+  footer{
+    margin: initial;
+  }
   .container {
     width: var(--container-width-sm);
   }

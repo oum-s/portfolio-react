@@ -11,6 +11,16 @@
     position: relative;
     justify-content: flex-end;
   
+    h1{
+      font-family: 'Montserrat', sans-serif;
+    }
+  
+}
+.myPhoto{
+  img{
+    border-radius: 10px;
+    filter: contrast(0.9);
+  }
 }
 .myDescr{
   color: var(--secondary);
@@ -24,7 +34,7 @@
   justify-content: center;
   width: 70%;
   
-  h3{
+  h2{
     font-size: 3.5em;
     text-transform: uppercase;
   }

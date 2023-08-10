@@ -5,6 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 import emailjs from 'emailjs-com';
+
+  
+// const handleShowNavbar = () => {
+//   // Si le showLinks est a true on l'active sinon on le laisse à false
+//     setShowNavbar(!showNavbar)
+//   }
 // import '..Contact';
 function Contact() {
   function scrollToTheTop() {
@@ -20,7 +26,7 @@ function Contact() {
   };
   return (
     <section id="contact">
-      <h3> Get in Touch</h3>
+      <h3 className='special'> Get in Touch</h3>
 
       <div className='container contact__container'>
 
@@ -34,7 +40,7 @@ function Contact() {
 
       </div>
 
-      <section className='fa-chevron-up'>
+      <section  className='fa-chevron-up'>
           <FontAwesomeIcon icon={faChevronUp} 
           onClick={()=> scrollToTheTop() }/>
       </section>

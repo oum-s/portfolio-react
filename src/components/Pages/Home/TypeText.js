@@ -5,7 +5,7 @@ import {Typewriter} from 'react-simple-typewriter';
 function TypeText() {
   return (
     <div>
-      <h3 className='text-light typescript'>
+      <h2 className='text-light typescript'>
         I'm a{' '}
         <span>
           <Typewriter
@@ -21,7 +21,7 @@ function TypeText() {
             }
           />
         </span>
-      </h3>
+      </h2>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 @import '../../../styles/index.scss';
 
 .footer{
+  height: 25vh;
   background-color: rgb(200, 72, 97);
   padding: 2rem 0;
   text-align: center;
@@ -15,6 +16,9 @@
     a{
       color: white;
       text-decoration: none;
+        &::after{
+          background-color: white;
+        }
       }
   }
 
@@ -32,6 +36,7 @@
       font-size: 1.5rem;
       color: var(--txt--color);
       &:hover{
+        transition: all 0.75s ease;
         background-color: var(--txt--color);
         color: var(--primary);
         border-color: var(--txt--color);

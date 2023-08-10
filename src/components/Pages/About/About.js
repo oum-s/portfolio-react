@@ -7,7 +7,7 @@ function About(showLinks) {
     <section id="about"
     style={{ backgroundImage: `url(${bgImg})` }}>
 
-      <h3>About me</h3>
+      <h3 className='special'>About me</h3>
 
         <section className='about__descr' id={`${showLinks ? "opacity" : " "}`}>
           <p>

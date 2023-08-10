@@ -7,7 +7,7 @@ import {BiCheck} from 'react-icons/bi';
 function Skills() {
   return (
     <section id="skills" className='container'>
-      <h5 className='special'> What Skills I have</h5>
+      <h3 className="special"> What Skills I have </h3>
 
         <div className='skills container'>
           <div className='skills__langages'>
