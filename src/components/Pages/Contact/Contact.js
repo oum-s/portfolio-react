@@ -1,6 +1,6 @@
 import './Contact.scss';
 import {useState} from 'react'
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,6 +13,16 @@ import emailjs from 'emailjs-com';
 //   }
 // import '..Contact';
 function Contact() {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            setShowTopBtn(true);
+        } else {
+            setShowTopBtn(false);
+        }
+    });
+  }, []);
   function scrollToTheTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -41,8 +51,11 @@ function Contact() {
       </div>
 
       <section  className='fa-chevron-up'>
-          <FontAwesomeIcon icon={faChevronUp} 
-          onClick={()=> scrollToTheTop() }/>
+            {" "}
+            {showTopBtn && (
+            <FontAwesomeIcon icon={faChevronUp} 
+              onClick={()=> scrollToTheTop() }/>
+              )}{" "}
       </section>
       
     </section>
