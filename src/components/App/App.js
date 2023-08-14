@@ -3,6 +3,7 @@ import Header from '../Fixed/Header/Header';
 import Home from '../Pages/Home/Home';
 import About from '../Pages/About/About';
 import Skills from '../Pages/Skills/Skills';
+import Experience from '../Pages/Experience/Experience';
 import Contact from '../Pages/Contact/Contact';
 import Footer from '../Fixed/Footer/Footer';
 import { useState } from 'react';
@@ -34,6 +35,7 @@ function App() {
         <Home />
         <About showLinks={showLinks}/>
         <Skills />
+        <Experience />
         <Contact />
       <Footer />
     </div>
