@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
+  overflow: hidden;
 }
 
 .experience{
@@ -27,34 +27,190 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
-  height: 80%;
+  border: 1px solid black;
+  height: 90%;
   width: 82%;
   &__descr{
-    flex: 1;
+    width: 40%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    &__row{
+      display: flex;
+      flex-direction: row;
+      width: 95%;
+      height: 30%;
+      text-align: justify;
+      border: 1px solid black;
+      &:hover{
+        animation: scale-down-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+        /* scale: 0.8; */
+      }
+
+      &__date, &__dtl{
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 16px;
+        font-family: "Montserrat", 'Times New Roman', Times, serif;
+        
+        &:hover{
+          scale: initial;
+        }
+        
+      }
+      &__date{
+        flex: 1;
+        border: 1px solid black;
+        font-size: 24px;
+        align-self: center;
+        font-weight: bold;
+
+      }
+      &__dtl{
+        align-self: center;
+        height: fit-content;
+        flex: 2;
+        border: 1px solid black;
+        
+        h4{
+          font-weight: bold;
+          font-size: 18px;
+          margin: 15px auto;
+        }
+      }
+    }
   }
   &__project{
+    display: flex;
+    flex-direction: column;
     flex: 2;
-      max-width: 70%;
-      height: 100%;
-    &__cards{
-    max-height: 100%;
+    max-width: 60%;
     height: 100%;
+    &__cards{
+    height: 100%;
+    width: 100%;
     flex-wrap: wrap;
     display: flex;
-    justify-content: space-around;
-    gap: 10px;
-    align-items: stretch;
-    }
+    flex-direction: column;
+
+      &__ctn--2__column--1 , &__ctn--1__row , .hideAndSeek{
+        &:hover .hidden__card{
+          /* display: block;
+          opacity: 1; */
+          width: 100%;
+          background-color: red;
+        }
+        &:hover > .experience__project__card{
+          opacity: .1;
+          background-color: blue;
+        } 
+      } 
+      .up , .alone, .first , .second{
+        position: absolute;
+        /* display: inline-block; */
+        
+      }
+      .up{
+        top: 0px;
+        right: 0px;
+      }
+      .alone{
+        top: 0;
+        right: 0;
+      }
+      .first{
+        top: 0;
+        left: 0;
+      }
+      .second{
+        bottom: 0;
+        left: 0;
+      }
+      &__ctn--1 {
+        flex-grow: 2;
+        
+        &__row{
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      &__ctn--2{
+        flex-grow: 3;
+        display: flex;
+        flex-direction: row;
+        
+
+        &__column--1{
+          position: relative;
+          overflow: hidden;
+          height: 100%;
+          width: 50%;
+          flex: 1;
+          }
+        &__column--2{
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          width: 50%;
+          flex: 1;
+          
+          .hideAndSeek{
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            border: 1px solid aqua;
+          }
+          .clmn{
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            border: 1px solid black;
+          }
+        }
     
+      
+      }
+    }
     &__card{
+      height: 100%;
+      width: 100%;
+      border: 1px solid black;
       cursor: pointer;
-      padding: 10px;
-      /* margin: 15px 0; */
-      box-shadow: rgb(230, 229, 229) 10px 5px 5px;
-      border: 1px solid transparent;
-      border-radius: 15px;
-      width: 47%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      img{
+        position: relative;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: 50% 50%;
+      }
+      
+      &:hover{
+        img{
+          display: none;
+        }
+      }
+    }
+    .hidden__card{
+      width: 0;
+      height: 100%;
+      position: absolute;
+      /* opacity: .1; */
+      /* display: none; */
+      transition: width .4s ease-in-out;
     }
   }
 }

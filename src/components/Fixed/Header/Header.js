@@ -69,6 +69,10 @@ function Header({show, showLinks, setShowLinks}) {
               </li>
 
               <li className='Navbar__links__item slideInDown-4'> 
+                <a href="#Experience" onClick={() => setActiveNav('#Experience') & handleShowLinks()} className={activeNav === '#Experience' ? 'active' : ' '} onBlur={hide} onFocus={showToggle}> Expériences </a> 
+              </li>
+
+              <li className='Navbar__links__item slideInDown-5'> 
                 <a href="#contact" onClick={() => setActiveNav('#contact') & handleShowLinks()} className={activeNav === '#contact' ? 'active' : ' '} onBlur={hide} onFocus={showToggle}> Contact 
                 </a>
               </li>

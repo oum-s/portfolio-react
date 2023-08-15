@@ -34,6 +34,17 @@ body {
   font-family: 'Montserrat', 'Playfair Display', Helvetica, sans-serif;
 }
 // Animations
+@keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
 @keyframes slide-right {
   0% {
     -webkit-transform: translateX(0);
