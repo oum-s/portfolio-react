@@ -1,13 +1,14 @@
 import './Experience.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLink } from '@fortawesome/free-solid-svg-icons'
-import projetTL from './../../../assets/project__teenlabs.png';
-import projetOC from '../../../assets/project__kasaa.jpg';
-import projetSkyblog from '../../../assets/project__skyblog.jpg';
-import projetOC2 from '../../../assets/project__bookifr.png';
-import logoOC from '../../../assets/OC_logo.png';
-import logoTL from '../../../assets/teenlabs-logo.jpg';
-import logoSky from '../../../assets/skyblog--logo.png';
+import projetOMC from './../../../assets/ohmycode__-min.png'
+import projetTL from './../../../assets/project__teenlabs-min.png'
+import projetOC from '../../../assets/projet__kasaa-min.jpg';
+import projetSkyblog from '../../../assets/skyblog__-min.png'
+import logoOC from '../../../assets/OC_logo-min.png';
+import logoTL from '../../../assets/teenlabs-logo-min.jpg';
+import logoOMC from '../../../assets/logo--oh-mycode-min.png';
+import logoSky from '../../../assets/skyblog--logo-min.png';
 
 
 
@@ -16,8 +17,8 @@ import logoSky from '../../../assets/skyblog--logo.png';
 function Experience() {
   
   return (
-    <section id="Experience" className='container'>
-      <h3 className="special"> Mes projets </h3>
+    <section id="Experience">
+      <h3 className="special container"> Mes projets </h3>
 
         <div className='experience'>
           <div className='experience__descr' >
@@ -27,28 +28,29 @@ function Experience() {
               </div>
               <div className='experience__descr__row__dtl'>
                 <h4>OPENCLASSROOMS  </h4>
-                <p>TITRE RNCP — DÉVELOPPEUSE WEB/WEB MOBILE DE NIVEAU BAC+2 (FULLSTACK)<br /> <br />
-                   Avril 2022 à Novembre 2022</p>
+                <p>TITRE RNCP — DÉVELOPPEUSE WEB/WEB MOBILE DE NIVEAU BAC+2 (FULLSTACK)</p>
+                <p>Avril 2022 à Novembre 2022</p>
               </div>
             </div>
             <div className='experience__descr__row'>
               <div className='experience__descr__row__date'>
-                <p>2022</p>
+                <p>2021</p>
               </div>
               <div className='experience__descr__row__dtl'>
-                <h4>OPENCLASSROOMS  </h4>
-                <p>TITRE RNCP — DÉVELOPPEUSE WEB/WEB MOBILE DE NIVEAU BAC+2 (FULLSTACK)<br /> <br />
-                   Avril 2022 à Novembre 2022</p>
+                <h4> WEBFORCE 3  </h4>
+                <p>CERTIFICATION PROFESSIONNEL — DÉVELOPPEUSE WEB/WEB MOBILE JUNIOR DE NIVEAU BAC+2 (FULLSTACK)</p>
+                <p>Avril 2021 à Juillet 2021</p>
               </div>
             </div>
             <div className='experience__descr__row'>
               <div className='experience__descr__row__date'>
-                <p>2022</p>
+                <p>2017</p>
               </div>
               <div className='experience__descr__row__dtl'>
-                <h4>OPENCLASSROOMS  </h4>
-                <p>TITRE RNCP — DÉVELOPPEUSE WEB/WEB MOBILE DE NIVEAU BAC+2 (FULLSTACK)<br /> <br />
-                   Avril 2022 à Novembre 2022</p>
+                <h4>SORBONNE-NOUVELLE  </h4>
+                <p>LICENCE — LANGUES, LITTÉRATURES ET CIVILISATIONS ÉTRANGÈRES ET RÉGIONALES
+                   ARABE </p>
+                <p>Octobre 2014 À Août 2017</p>
               </div>
             </div>
           </div>
@@ -58,17 +60,20 @@ function Experience() {
                 <div className='experience__project__cards__ctn--1__row'>
                   <div 
                   className="experience__project__card up">
-                    <img src={projetTL} alt='projet' /> 
+                    <img src={projetOMC} alt='projet__ohmycode' /> 
                   </div>
                   <div className='hidden__card  up'>
                     <div className='hidden__card__img'>
-                      <img src={logoTL} alt='teenlabs__logo'></img>
+                      <img src={logoOMC} alt='ohmycode__logo'></img>
                     </div>
-                    <h5>Teenlabs</h5>
-                    <p>Langages utilisés: PHP/MySQ</p>
-                    <a href="/">
+                    <h5>Ohmycode</h5>
+                    <p>Langages utilisés: HTML/CSS</p>
+                    <div className='exp__btn'>
+                    <a href="https://oum-s.github.io/ohmycode/">
                       <FontAwesomeIcon className='faLink' icon={faLink} />
                     </a>
+                    </div>
+                    
                   </div>
                 </div>
                 
@@ -87,9 +92,12 @@ function Experience() {
                         </div>
                         <h5>Skyblog</h5>
                         <p>Langages utilisés: HTML/CSS</p>
-                        <a href="https://github.com/oum-s/skyblog/deployments/github-pages">
-                          <FontAwesomeIcon className='faLink' icon={faLink} />
-                        </a>
+                        <div className='exp__btn'>
+                          <a href="https://github.com/oum-s/skyblog/deployments/github-pages">
+                            <FontAwesomeIcon className='faLink' icon={faLink} />
+                          </a>
+                        </div>
+                        
                       </div>
                 </div>
 
@@ -106,25 +114,29 @@ function Experience() {
                       </div>
                       <h5>OPENCLASSROOMS</h5>
                       <p>Langage utilisé: React</p>
-                      <a href="https://github.com/oum-s/P5-Kanap">
+                      <div className='exp__btn'>
+                        <a href="https://github.com/oum-s/P5-Kanap">
                           <FontAwesomeIcon className='faLink' icon={faLink} />
-                      </a>
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <div className='hideAndSeek'>
                     <div 
                     className="experience__project__card clmn second">
-                    <img src={projetOC2} alt='projet__oc' /> 
+                    <img src={projetTL} alt='projet__teenlabs' /> 
                     </div>
                     <div className='hidden__card second'>
                       <div className='hidden__card__img oc'>
-                        <img src={logoOC} alt='openclassrooms__logo'></img>
+                        <img src={logoTL} alt='TEENLABS__logo'></img>
                       </div>
-                      <h5>OPENCLASSROOMS</h5>
-                      <p>Langage utilisé: HTML/SCSS</p>
-                      <a href="https://github.com/oum-s/P2-BookiFr/deployments/github-pages">
-                          <FontAwesomeIcon className='faLink' icon={faLink} />
-                      </a>
+                      <h5>Teenlabs</h5>
+                      <p>Langage utilisé: PHP/MySQL</p>
+                      <div className='exp__btn'>
+                        <a href="/">
+                            <FontAwesomeIcon className='faLink' icon={faLink} />
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -139,13 +151,4 @@ function Experience() {
     </section>
   );
 }
-<div class="relative">This div element has position: relative;
-
-    <div class="absolute one">This div element has position: absolute;
-    </div>
-
-    <div class="hidden absolute">This div element should be the same as Absolute except hidden.
-    </div>
-
-</div>
 export default Experience;

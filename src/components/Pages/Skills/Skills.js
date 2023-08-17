@@ -43,6 +43,10 @@ function Skills() {
                   <BiCheck className='skill__ list icon' />
                   <p>Modification d'un thème Wordpress.</p>
                 </li>
+                <li>
+                  <BiCheck className='skill__ list icon' />
+                  <p>Optimisation d'un site via le plugin Rank Math</p>
+                </li>
               </ul>
             </article>
 
@@ -60,10 +64,7 @@ function Skills() {
                   <BiCheck className='skill__ list icon' />
                   <p>Référencement Naturel (SEO)</p>
                 </li>
-                <li>
-                  <BiCheck className='skill__ list icon' />
-                  <p>Optimisation d'un site via le plugin Rank Math</p>
-                </li>
+                
                 <li>
                   <BiCheck className='skill__ list icon' />
                   <p>Maintien d’une communauté sur les réseaux sociaux</p>

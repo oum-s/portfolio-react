@@ -1,10 +1,9 @@
 @import '../../../styles/index.scss';
-// .Header.hide-nav .Navbar.noNavbar#not-fixed{
-//   transition: none;
-//   visibility:hidden;
-//   height: 0px;
-//   z-index: 0;
-// }
+.Header.hide-nav .Navbar.noNavbar#not-fixed{
+  visibility:hidden;
+  height: 0px;
+  z-index: 0;
+}
 .myContainer{
   margin: 0 2rem;
   height: 60px;

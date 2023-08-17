@@ -206,4 +206,85 @@ img {
   section > h2 {
     margin-bottom: 2rem;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+.Home {
+  height: 85vh;
+  overflow: hidden;
+  background-color: transparent;
+  color: var(----primary);
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+  position: relative;
+  justify-content: flex-end;
+}
+.Home h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.myPhoto img {
+  border-radius: 10px;
+  filter: contrast(0.9);
+}
+
+.myDescr {
+  color: var(--secondary);
+  position: absolute;
+  TOP: 16rem;
+  left: 2rem;
+  text-align: justify;
+}
+
+.myPhoto, .myDescr {
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+}
+.myPhoto h2, .myDescr h2 {
+  font-size: 3.5em;
+  text-transform: uppercase;
+}
+
+.typescript {
+  font-family: "Anton", sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+}
+
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.scroll__down {
+  position: absolute;
+  right: 2.3rem;
+  bottom: 5rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav {
+    height: 68vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Home.container {
+    z-index: -1;
+  }
+  .nav {
+    height: 100vh;
+  }
+  .scroll__down {
+    display: none;
+  }
+  .cta {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}/*# sourceMappingURL=Home.css.map */

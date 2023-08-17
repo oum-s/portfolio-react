@@ -1,9 +1,9 @@
 @import '../../../styles/index.scss';
 
 .footer{
-  height: 25vh;
+  height: 20vh;
   background-color: rgb(200, 72, 97);
-  padding: 2rem 0;
+  padding: 1rem 0;
   text-align: center;
   font-size: 0.9rem;
 
@@ -11,8 +11,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    height: 50%;
     gap: 2rem;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1.5rem;
     a{
       color: white;
       text-decoration: none;
@@ -29,12 +30,16 @@
     margin-bottom: 2rem;
     a {
       background-color: var(--primary);
-      padding: 0.8rem;
-      border-radius: 0.7rem;
+      padding: 0.2em;
+      border-radius: 0.5rem;
       display: flex;
       border: 1px solid transparent;
       font-size: 1.5rem;
       color: var(--txt--color);
+
+      .social__icons{
+        height: 0.6em;
+      }
       &:hover{
         transition: all 0.75s ease;
         background-color: var(--txt--color);
@@ -44,9 +49,9 @@
     }
   }
 
-  &__copyright{
+  /* &__copyright{
     color: var(--txt--color);
-  }
+  } */
 
 }
 

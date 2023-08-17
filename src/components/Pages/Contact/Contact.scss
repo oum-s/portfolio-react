@@ -4,9 +4,13 @@ h3{
   margin-bottom: 1rem;
   padding-top: 2rem;
 }
+.noBtn{
+  display: none;
+}
 #contact{
-  height: 75vh;
-  margin: 0;
+  height: 80vh;
+    margin: 0 auto;
+    width: 100vw;
 }
 input, textarea{
   width: 100%;
@@ -23,19 +27,22 @@ input, textarea{
   }
 }
 
-.container.contact__container {
+.contact__container {
   width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 
   form{
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 70%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 70%;
+    height: 100%;
   }
 }
 section.fa-chevron-up{

@@ -23,7 +23,7 @@ function About(showLinks) {
       </p>
             </section>
 
-          <div>
+          <div className='contact__btn'>
           <a href="#contact" className='btn btn--primary'>Let's talk</a>
           </div>
       </section>

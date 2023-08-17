@@ -13,27 +13,31 @@ import emailjs from 'emailjs-com';
 //   }
 // import '..Contact';
 function Contact() {
-  const [showTopBtn, setShowTopBtn] = useState(false);
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            setShowTopBtn(true);
-        } else {
-            setShowTopBtn(false);
-        }
-    });
-  }, []);
-  function scrollToTheTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-  const [text, setText] = useState('Your Message')
-  const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
+const [showTopBtn, setShowTopBtn] = useState(false);
+useEffect(() => {
+  window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+          setShowTopBtn(true);
+      } else {
+          setShowTopBtn(false);
+      }
+  });
+}, []);
 
-    emailjs.sendForm('service_rugh2rg', 'template_64rv9lk',  form.current, 'AQvwjQlL92YTS9R7-' )
-    e.target.reset()
-  };
+function scrollToTheTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+const [text, setText] = useState('Your Message')
+const form = useRef();
+
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs.sendForm('service_rugh2rg', 'template_64rv9lk',  form.current, 'AQvwjQlL92YTS9R7-' )
+  e.target.reset()
+};
+
   return (
     <section id="contact">
       <h3 className='special'> Get in Touch</h3>
@@ -50,10 +54,11 @@ function Contact() {
 
       </div>
 
-      <section  className='fa-chevron-up'>
+      <section className={` fa-chevron-up ${showTopBtn ? " " : "noBtn"}`}>
             {" "}
             {showTopBtn && (
-            <FontAwesomeIcon icon={faChevronUp} 
+            <FontAwesomeIcon
+            icon={faChevronUp} 
               onClick={()=> scrollToTheTop() }/>
               )}{" "}
       </section>
