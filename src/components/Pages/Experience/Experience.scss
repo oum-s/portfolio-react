@@ -13,7 +13,7 @@
 }
 
 .experience{
-  margin-top: 3rem;
+  margin: 2rem 0;
   flex-direction: row-reverse;
   display: flex;
   align-items: center;
@@ -101,9 +101,16 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
+    
 
       &__ctn--2__column--1 , &__ctn--1__row , .hideAndSeek{
+        .hidden__card__img , h5 , p , .exp__btn{
+          visibility:hidden;
+          opacity: 0;
+          z-index: -1;
+        }
         &:hover .hidden__card{
+          z-index: 2;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -114,6 +121,11 @@
           width: 100%;
           background-color: white;
           
+        }
+        &:hover .hidden__card__img , h5 , p , .exp__btn{
+            visibility:visible;
+            opacity: 1;
+            z-index: -1;
         }
         &:hover > .experience__project__card{
           opacity: 1;

@@ -1,4 +1,8 @@
 @import '../../../styles/index.scss';
+#Header{
+  scroll-snap-align: start;
+  /* position: relative; */
+}
 .Header.hide-nav .Navbar.noNavbar#not-fixed{
   visibility:hidden;
   height: 0px;
@@ -188,7 +192,9 @@
 }
 //MEDIA QUERIES (MEDIUM AND SMALL DEVICES)
 @media screen and (max-width: 801px){
-
+  #Header{
+    scroll-snap-align: initial;
+  }
   .Header{
     .nav__logo{
       height: 6rem;
@@ -209,7 +215,7 @@
         visibility: hidden;
 
         &__item {
-          transform: translateY(100vh);
+          transform: translateY(/* height: 100vh; */);
         }
       }
       //toggle menu

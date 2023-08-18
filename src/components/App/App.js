@@ -31,13 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header setShow={setShow} show={show} showLinks={showLinks} setShowLinks={setShowLinks}/>
-        <Home />
-        <About showLinks={showLinks}/>
-        <Skills />
-        <Experience />
-        <Contact />
-      <Footer />
+        <Header setShow={setShow} show={show} showLinks={showLinks} setShowLinks={setShowLinks}/>
+          <Home />
+          <About showLinks={showLinks}/>
+          <Skills  />
+          <Experience />
+          <Contact />
+        <Footer />
     </div>
   );
 }

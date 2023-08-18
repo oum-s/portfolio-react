@@ -6,7 +6,7 @@ import TypeText from './TypeText';
 
 function Home() {
   return (
-    <div className="Home container">
+    <div className="Home container" id='home'>
       <div className='myPhoto'>
         <img src={myPhoto} alt='myPhoto' />
       </div>

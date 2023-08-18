@@ -23,6 +23,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  position: relative;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  height: 100vh;
+  width: 100%;
+}
+
+.App > section{
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -223,6 +240,12 @@ img{
 
 //MEDIA QUERIES (MEDIUM DEVICES)
 @media screen and (max-width: 1024px){
+  .App > section{
+    scroll-snap-align: initial;
+    height: initial;
+    width: initial;
+    position: initial;
+  }
   .container {
     width: var(--container-width-md);
   }
@@ -233,6 +256,12 @@ img{
 }
 //MEDIA QUERIES (SMALL DEVICES)
 @media screen and (max-width: 600px){
+  .App > section{
+    scroll-snap-align: initial;
+    height: initial;
+    width: initial;
+    position: initial;
+  }
   #about, #skills, #contact, footer{
     height: initial;
   }

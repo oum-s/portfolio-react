@@ -4,7 +4,7 @@ section{
   margin: 0 auto;
 }
 #about{
-min-height: 100vh;
+// min-height: 100vh;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -43,6 +43,7 @@ margin-bottom: 0;
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
+    height: 92%;
   }
 
   .contact__btn{

@@ -4,7 +4,7 @@ import bgImg from '../../../assets/desk2.jpg';
 
 function About(showLinks) {
   return (
-    <section id="about"
+    <section id="about" 
     style={{ backgroundImage: `url(${bgImg})` }}>
       <h3 className='special'>About me</h3>
             <section className='about__descr' id={`${showLinks ? "opacity" : " "}`}>
