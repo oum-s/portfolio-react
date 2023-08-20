@@ -2,18 +2,18 @@
 
 #home{
   height: 85vh;
-    overflow: hidden;
+  overflow: hidden;
 }
 .Home{
   height: 85vh;
-    overflow: hidden;
-    background-color: transparent;
-    color: var(----primary);
-    display: flex;
-    align-items: center;
-    /* text-align: center; */
-    position: relative;
-    justify-content: flex-end;
+  overflow: hidden;
+  background-color: transparent;
+  color: var(----primary);
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+  position: relative;
+  justify-content: flex-end;
   
     h1{
       font-family: 'Montserrat', sans-serif;
@@ -73,7 +73,7 @@
 }
 
 //MEDIA QUERIES (SMALL DEVICES)
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
   .Home.container{
     z-index: -1;
   }

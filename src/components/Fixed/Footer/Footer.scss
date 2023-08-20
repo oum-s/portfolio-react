@@ -6,17 +6,20 @@
   padding: 1rem 0;
   text-align: center;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .permalinks{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 50%;
     gap: 2rem;
     margin: 0 auto 1.5rem;
     a{
       color: white;
       text-decoration: none;
+      font-size: 0.8rem;
         &::after{
           background-color: white;
         }
@@ -31,14 +34,14 @@
     a {
       background-color: var(--primary);
       padding: 0.2em;
-      border-radius: 0.5rem;
+      border-radius: 0.7rem;
       display: flex;
       border: 1px solid transparent;
       font-size: 1.5rem;
       color: var(--txt--color);
 
       .social__icons{
-        height: 0.6em;
+        height: 0.8em;
       }
       &:hover{
         transition: all 0.75s ease;
@@ -56,13 +59,17 @@
 }
 
 //MEDIA QUERIES (SMALL DEVICES)
-@media screen and (max-width: 600px){
-  .permalinks{
-    flex-direction: column;
-    gap: 1.5rem;
+@media screen and (max-width: 800px){
+  .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer .permalinks{
+    display: none;
   }
 
-  .footer__socials{
-    margin-bottom: 2.6rem;
+  .footer__socials a .social__icons {
+    height: initial;
   }
 }

@@ -9,6 +9,8 @@ import Footer from '../Fixed/Footer/Footer';
 import { useState } from 'react';
 
 function App() {
+  // useState pour repérer le lien actif dans la barre menu
+  const [activeNav, setActiveNav] = useState('#');
   // useState lié au scroll
   const [show, setShow] = useState(false)
 
@@ -31,12 +33,14 @@ function App() {
 
   return (
     <div className="App">
-        <Header setShow={setShow} show={show} showLinks={showLinks} setShowLinks={setShowLinks}/>
+        <div className='containerSnap'>
+          <Header setShow={setShow} show={show} showLinks={showLinks} setShowLinks={setShowLinks} activeNav={activeNav} setActiveNav={setActiveNav}/>
           <Home />
+        </div>
           <About showLinks={showLinks}/>
           <Skills  />
           <Experience />
-          <Contact />
+          <Contact activeNav={activeNav} setActiveNav={setActiveNav}/>
         <Footer />
     </div>
   );

@@ -9,8 +9,12 @@ h3{
 }
 #contact{
   height: 80vh;
-    margin: 0 auto;
-    width: 100vw;
+  margin: 0 auto;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 input, textarea{
   width: 100%;
@@ -29,17 +33,18 @@ input, textarea{
 
 .contact__container {
   width: 60%;
-  height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 
   form{
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     width: 70%;
     height: 100%;
@@ -50,7 +55,7 @@ section.fa-chevron-up{
   margin: 0;
   position: fixed;
   right: 0;
-  bottom: 350px;
+  bottom: 8.5rem;
   font-weight: 300;
   font-size: 2rem;
   color: var(--txt--color);
@@ -62,18 +67,23 @@ section.fa-chevron-up{
   /* border: 1px solid var(--txt--color);
   border-right: initial; */
 }
-
+form > button{
+  margin-top: 2rem;
+}
 
 
 
 
 
 //MEDIA QUERIES (SMALL DEVICES)
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
  .container.contact__container{
   width: var(--container-width-sm);
  }
  .fa-chevron-up{
   display: none;
+ }
+ .btn--primary {
+  margin-bottom: 20px;
  }
 }

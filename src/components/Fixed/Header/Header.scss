@@ -1,8 +1,8 @@
 @import '../../../styles/index.scss';
-#Header{
-  scroll-snap-align: start;
-  /* position: relative; */
-}
+// #Header{
+//   scroll-snap-align: start;
+//   position: relative;
+// }
 .Header.hide-nav .Navbar.noNavbar#not-fixed{
   visibility:hidden;
   height: 0px;
@@ -21,9 +21,9 @@
   z-index: 6;
   }
 }
-#bg-btn{
-  background-color: var(--primary--light);
-}
+// #bg-btn{
+//   background-color: var(--primary--light);
+// }
 .Header{
   .nav__logo{
     height: 112px;
@@ -81,7 +81,7 @@
   width: 10vh;
   height: 58px;
   top: 2rem;
-  right: 1rem;
+  right: 2rem;
   background-color: transparent;
   border: transparent;
   z-index: 2;
@@ -149,7 +149,15 @@
   height: 60px;
   margin: 1rem auto;
   width: 50%;
-  background-color: var(--txt--color);
+  background-color: var(--primary--light);
+  /* li > a {
+    color: white;
+  } */
+  .active {
+    &::after{
+      background-color: white;
+    }
+  }
 }
 .Header.show-nav{
   .Navbar#fixed{
@@ -163,7 +171,7 @@
     display: block;
     font-size: 18px;
     opacity: 1;
-    width: 98%;
+    width: 96.2%;
     
     .Navbar__container{
       display: flex;

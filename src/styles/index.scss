@@ -32,14 +32,39 @@ html{
   scroll-behavior: smooth;
   height: 100vh;
   width: 100%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
-
+.App > .containerSnap{
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
 .App > section{
   scroll-snap-align: start;
   height: 100vh;
   width: 100%;
   position: relative;
 }
+.active{
+  position: relative;
+  padding-bottom: 3px;
+  &::after{
+    content : "";
+    position : absolute;
+    width : 100%;
+    height : 2px;
+    background-color: var(--txt--color);
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom left;
+    transform: scaleX(1);
+    transition : transform 0.25s linear;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -197,7 +222,7 @@ li > a{
               transform-origin: bottom right;
               transition : transform 0.25s linear;
             }
-            &:hover::after {
+            &:hover::after{
               transform-origin: bottom left;
               transform: scaleX(1);
             }
@@ -246,6 +271,9 @@ img{
     width: initial;
     position: initial;
   }
+  #about, #skills, #contact, footer{
+    height: initial;
+  }
   .container {
     width: var(--container-width-md);
   }
@@ -255,7 +283,10 @@ img{
   }
 }
 //MEDIA QUERIES (SMALL DEVICES)
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
+  html{
+    all: initial;
+  }
   .App > section{
     scroll-snap-align: initial;
     height: initial;

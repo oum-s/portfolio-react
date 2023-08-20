@@ -4,11 +4,8 @@ import './Header';
 import { useState, useEffect } from 'react';
 
 
-function Header({show, showLinks, setShowLinks}) {
-  
-  // useState pour repérer le lien actif dans la barre menu
-  const [activeNav, setActiveNav] = useState('#');
-  
+function Header({activeNav, setActiveNav, show, showLinks, setShowLinks}) {
+
   // position it and to make sure it only shows on screens too small to fit all of the links next to each other.
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +18,8 @@ function Header({show, showLinks, setShowLinks}) {
   // Si le showLinks est a true on l'active sinon on le laisse à false
     setShowLinks(!showLinks)
   }
-  console.log(showLinks)
+
+  // maitriser le scroll
   const [scrollSuperior, setScrollSuperior] = useState(false);
 
   //permet d'effectuer notre effet une fois le rendu du composant terminé
@@ -34,6 +32,7 @@ function Header({show, showLinks, setShowLinks}) {
       return () => window.removeEventListener('scroll', handleScroll);
   },[])
 
+
   return (
     <div className={`${showLinks && 'myContainer'}`} id='Header'>
       {/* // Si on a la variable showLinks true on lui met la classe show-nav sinon hide-nav */}
@@ -41,7 +40,7 @@ function Header({show, showLinks, setShowLinks}) {
 
         <div className="nav__logo">
 
-          <a href="/">
+          <a href="#Header">
             <img className='logo' src={logo} alt="oums_logo" />
           </a>
 
@@ -57,7 +56,7 @@ function Header({show, showLinks, setShowLinks}) {
 
               <li className='Navbar__links__item slideInDown-1'> 
                 {/* Pour le lien actif dans le menu ET enlever le menu toggle lors du click */}
-                <a href="/" className={activeNav === '/' ? 'active' : ''} onClick={() => handleShowLinks()} onBlur={hide} onFocus={showToggle}> Accueil</a>
+                <a href="#Header" onClick={() => handleShowLinks()} onBlur={hide} onFocus={showToggle}> Accueil</a>
               </li>
 
               <li className='Navbar__links__item slideInDown-2'> 
@@ -86,12 +85,15 @@ function Header({show, showLinks, setShowLinks}) {
           </div>
 
         </div>
-          <button className={`Navbar__burger__lg ${!show ? "none" : "display"} `} 
-                onClick={ () => {showLinks ? setShowLinks(false) : setShowLinks(true)}}
-                id={`${showLinks && "bg-btn"}`}
-                >
-            <span className='Navbar__burger__bar' onClick={ () => handleShowLinks()}></span>
-          </button>
+
+        <button className={`Navbar__burger__lg ${!show ? "none" : "display"} `} 
+              onClick={ () => {showLinks ? setShowLinks(false) : setShowLinks(true)}}
+              id={`${showLinks && "bg-btn"}`}
+        >
+        
+        <span className='Navbar__burger__bar' onClick={ () => handleShowLinks()}></span>
+
+        </button>
 
       </div>
     

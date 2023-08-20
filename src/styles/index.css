@@ -22,6 +22,34 @@
   box-sizing: border-box;
 }
 
+html {
+  position: relative;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  height: 100vh;
+  width: 100%;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.App > .containerSnap {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.App > section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -186,6 +214,15 @@ img {
 }
 
 @media screen and (max-width: 1024px) {
+  .App > section {
+    scroll-snap-align: initial;
+    height: initial;
+    width: initial;
+    position: initial;
+  }
+  #about, #skills, #contact, footer {
+    height: initial;
+  }
   .container {
     width: var(--container-width-md);
   }
@@ -193,7 +230,16 @@ img {
     margin-top: 6rem;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
+  html {
+    all: initial;
+  }
+  .App > section {
+    scroll-snap-align: initial;
+    height: initial;
+    width: initial;
+    position: initial;
+  }
   #about, #skills, #contact, footer {
     height: initial;
   }
