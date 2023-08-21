@@ -1,15 +1,36 @@
 import './Contact.scss';
-import {useState} from 'react'
-import React, { useRef, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import emailjs from "emailjs-com";
+import { useContext, useRef } from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
-import emailjs, { send, sendForm } from 'emailjs-com';
-
-  // maitriser l'underline des liens de nav
-function Contact({activeNav, setActiveNav}) {
-    
-  /* const handleActiveNav = () => {
+    //FORMULAIRE
+    const regexNames = new RegExp("^[a-zA-Z-'.\u00C0-\u00FF]*$");
+    const regexEmail = new RegExp("^([a-zA-Z0-9.]{2,})+@([a-zA-Z0-9.]{2,})+[.]+([a-zA-Z0-9-]{2,20})$");//ok
+const schema = yup
+    .object({
+      nom: yup.string()
+        .min(3, '3 caractères minimum')
+        .max(15, '15 caractères maximum')
+        .matches(regexNames, "Nom incorrect")
+        .required('Nom obligatoire'),
+      email: yup.string()
+        .email('Email invalide')
+        .matches(regexEmail, "Email incorrect")
+        .required("Email obligatoire"),
+      message: yup.string()
+        .min(15, '15 caractères minimum')
+        .max(300, '300 caractères maximum')
+        .required('Message obligatoire'),
+    })
+    .required();
+ // maitriser l'underline des liens de nav
+ function Contact({activeNav, setActiveNav}) {
+   /* const handleActiveNav = () => {
     activeNav(current => !current)
   } */
     // montrer le bouton topscroll seulement après 400px
@@ -32,99 +53,73 @@ function Contact({activeNav, setActiveNav}) {
 
   const form = useRef();
   const sendEmail = (e) => {
-    /* e.preventDefault();
-  */
-    emailjs.sendForm('service_rugh2rg', 'template_64rv9lk',  form.current, 'AQvwjQlL92YTS9R7-' )
-    e.target.reset()
+    e.preventDefault();
+    emailjs.sendForm(
+      'service_rugh2rg',
+      'template_64rv9lk',
+      form.current,
+      'AQvwjQlL92YTS9R7-')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+          }
+    );
   };
 
-  // REGEX
-
- /*  const Controlled = () => {
-    return <input value="controlled" />;
-    return <input value={value} onChange={(e) => setValue(e.target.value)} />;
-  };
-  
-  const Uncontrolled = () => {
-    return <input defaultValue={'Uncontrolled'} />;
-  }; */
-  const [errors, setErrors] = useState({ name: null, email: null });
-  const onSubmit = (e) => {
-    const name = form.elements.name.value;
-    const email = form.elements.email.value;
-
-    let errors = { name: null, email: null };
-
-    if (!name) errors.name = 'Name is required';
-
-    if (!email) errors.email = 'Email is required';
-
-    // email length
-    if (email.length > 50) errors.email = 'Email is too long';
-
-    if (email.length < 5) errors.email = 'Email is too short';
-
-    if (errors.name || errors.email) {
-      setErrors(errors);
-      return;
-    }
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: {errors}
+  } = useForm({
+      resolver: yupResolver(schema)
+    });
+  const onSubmit = (data, e) => {
+    console.log(data);
+    sendEmail(e);
+    reset();
   }
-   
-
+  console.log(errors);
   
+    return (
+      <section id="contact">
+        <h3 className='special'> Get in Touch</h3>
+  
+        <div className='container contact__container'>
+  
+          <form ref={form}
+          onSubmit={handleSubmit(onSubmit)}>
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState(''); 
-/*
-    // const [email, setEmail] = useState('');
-    // const [name, setName] = useState('');
-    // const [nameErr, setNameErr] = useState('');
-    // const [emailErr, setEmailErr] = useState('');
+          <input type="text" name="nom" placeholder='Votre Nom' {...register('nom', { required: true })} />
+          {/* {errors.nom && <span className='warning'>Nom invalide </span>} */}
+          {errors.nom && <span className="messageError">{errors.nom.message}</span>}
 
-    // const validEmail = new RegExp('^([a-zA-Z0-9.]{2,})+@([a-zA-Z0-9.]{2,})+[.]+([a-zA-Z0-9-]{2,20})$');
-    // const validName = new RegExp("^[a-zA-Z-'.\u00C0-\u00FF]*$");
+          <input type="text" name="email" placeholder='Votre E-Mail'  {...register('email', { required: true })} />
+          {errors.email && <span className="messageError">{errors.email.message}</span>}
 
-    // const validate = () => {
-    //   if (!validEmail.test(email)) {
-    //     setEmailErr(true);
-    //   }
-    //   if (!validName.test(name)) {
-    //       setNameErr(true);
-    //   }
-    // }
+          <textarea name="message" rows="7" placeholder='Votre Message' {...register('message', { required: true })}> </textarea>
+          {errors.message && <span className="messageError">{errors.message.message}</span>}
 
-    */
-
-  return (
-    <section id="contact">
-      <h3 className='special'> Get in Touch</h3>
-
-      <div className='container contact__container'>
-
-        <form ref={form} onSubmit={sendForm}>
-          {/* <input type="text" name="name" placeholder='Nom' value={name} onChange={(e) => setName(e.target.value)} required />
-          <input type="text" name="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <textarea name="message" rows="7" placeholder='Your Message' required> </textarea> */}
-          <input type="text" name="name" placeholder='Your Full Name' required />
-          <input type="text" name="email" placeholder='Your E-Mail' required />
-          <textarea name="message" rows="7" placeholder='Your Message' required> </textarea>
+          <button type="submit" className='btn btn--primary' value='Send'>Envoyer</button>
           
-          <button type="submit" className='btn btn--primary' onClick={onSubmit}>Send A Message</button>
-        </form>
+          </form>
         
-      </div>
+        </div>
+
 
       <section className={`fa-chevron-up ${showTopBtn ? " " : "noBtn"}`}>
-            {" "}
-            {showTopBtn && (
-            <FontAwesomeIcon
-            icon={faChevronUp} 
-              onClick={()=> scrollToTheTop()}
-              />
-              )}{" "}
+      {" "}
+      {showTopBtn && (
+      <FontAwesomeIcon
+      icon={faChevronUp} 
+        onClick={()=> scrollToTheTop()}
+        />
+        )}{" "}
       </section>
-      
-    </section>
+
+
+      </section>
   );
 }
 
