@@ -54,7 +54,7 @@
   }
   &__content{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 60%;
     margin: 3rem;
@@ -63,10 +63,13 @@
       height: 100%;
       box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
       background-color: var(--primary--light);
-      /* border-radius: 2rem; */
       border: 1px solid gainsboro;
       transition: var(--transition);
-      width: 40%;
+      /* width: 40%; */
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
       &__head{
         background-color: var(--primary--light);
         padding: 1rem;
@@ -101,8 +104,98 @@
         }
 
       }
+      .experience__descr{
+        width: 40%;
+        min-height: 50%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        
+        &__row{
+          display: flex;
+          flex-direction: row;
+          width: 95%;
+          height: 34%;
+          /* margin: 15px 0; */
+          text-align: justify;
+          &:hover{
+            animation: scale-down-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+            
+          }
+    
+          &__date, &__dtl{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: "Montserrat", 'Times New Roman', Times, serif;
+            
+            &:hover{
+              scale: initial;
+            }
+            
+          }
+          &__date{
+            flex: 1 1;
+            font-size: 20px;
+            align-self: center;
+            font-weight: bold;
+            border-right: 3px solid var(--secondary);
+            padding: 20px
+            p{
+              color: var(--txt--color);
+            }
+    
+          }
+          &__dtl{
+            
+            font-size: 14px;
+            align-self: center;
+            height: -moz-fit-content;
+            height: fit-content;
+            text-align: left;
+            display: flex;
+            justify-content: flex-start;
+            flex: 2 1;
+            padding: 10px 20px;
+    
+            
+            h4{
+              font-weight: bold;
+              font-size: 18px;
+              margin: 15px 0;
+            }
+            p:nth-child(3){
+              margin-top: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      &__img{
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+          object-fit: contain;
+          width: 50%;
+        }
+        &:hover{
+          height: 100%;
+        }
+      }
 
     }
+
+    .skill:nth-child(1){
+      width: 70%;
+    }
+    /* .skill:nth-child(1){
+      flex: 1;
+    } */
 
   }
 }

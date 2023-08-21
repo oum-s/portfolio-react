@@ -60,7 +60,7 @@ function Header({activeNav, setActiveNav, show, showLinks, setShowLinks}) {
               </li>
 
               <li className='Navbar__links__item slideInDown-2'> 
-                <a href="#about" onClick={() => setActiveNav('#about') & handleShowLinks() } className={activeNav === '#about' ? 'active' : ' '} onBlur={hide} onFocus={showToggle}> A propos </a> 
+                <a href="#about" onClick={() => setActiveNav('#about') & handleShowLinks() } className={activeNav === '#about' ? 'active' : ' '} onBlur={hide} onFocus={showToggle}> À propos </a> 
               </li>
 
               <li className='Navbar__links__item slideInDown-3'> 

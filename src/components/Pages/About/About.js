@@ -6,7 +6,7 @@ function About(showLinks) {
   return (
     <section id="about" 
     style={{ backgroundImage: `url(${bgImg})` }}>
-      <h3 className='special'>About me</h3>
+      <h3 className='special'>À propos</h3>
             <section className='about__descr' id={`${showLinks ? "opacity" : " "}`}>
       <section className='about__container'>
       
@@ -24,7 +24,7 @@ function About(showLinks) {
             </section>
 
           <div className='contact__btn'>
-          <a href="#contact" className='btn btn--primary'>Let's talk</a>
+          <a href="#contact" className='btn btn--primary'>Contactez moi</a>
           </div>
       </section>
     </section>
