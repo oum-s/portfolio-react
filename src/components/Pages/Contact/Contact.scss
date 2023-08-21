@@ -87,3 +87,9 @@ form > button{
   margin-bottom: 20px;
  }
 }
+
+@media screen and (max-width: 400px){
+  .contact__container form {
+    width: 90%;
+  }
+}

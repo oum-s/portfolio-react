@@ -65,3 +65,14 @@ margin-bottom: 0;
 } 
 
 }
+//MEDIA QUERIES (SMALL DEVICES)
+@media screen and (max-width: 400px){
+  #about .about__container {
+    height: 100%;
+
+    p {
+      height: 100%;
+    }
+  }
+ }
+ 

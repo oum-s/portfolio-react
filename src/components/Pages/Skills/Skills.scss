@@ -4,7 +4,7 @@
 #skills{
   position: relative;
   width: 100vw;
-  /* height: 100vh; */
+  height: 100vh;
   background-color: var(--primary--light);
   color: var(--secondary);
   margin-bottom: 5rem;
@@ -14,10 +14,10 @@
   height: 90%;
   display: block;
   &__langages{
-    
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    min-height: 5rem;
     height: 20%;
     align-items: center;
     padding: 0 3rem;
@@ -56,7 +56,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60%;
+    min-height: 60%;
+    height: 60vh;
     margin: 3rem;
 
     .skill{
@@ -175,7 +176,7 @@
       }
 
       &__img{
-        height: 70%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -220,8 +221,8 @@
 }
 //MEDIA QUERIES (MEDIUM DEVICES)
 @media screen and (max-width: 800px){
-  .skills__content .skill {
-    width: 80%;
+  .skills.container .skills__content .skill {
+    width: 100%;
   }
   
   
@@ -239,11 +240,15 @@
     align-items: center;
   }
   .skills__langages .svg-inline--fa {
-    height: 3rem;
+    height: 2rem;
+    padding: 2px;
   }
 
   .skills.container .skills__content .skill {
     width: 100%;
+  }
+  .skill:nth-child(1){
+    height: 80%;
   }
   
   .skills , #skills{
@@ -255,4 +260,41 @@
   }
 }
 
+//MEDIA QUERIES (SMALL DEVICES)
+@media screen and (max-width: 400px){
+  #skills.container{
+    height: 100vh;
+
+    .skills__langages {
+      height: fit-content;
+    }
+    .special{
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .skills__content{
+    width: var(--container-width-sm);
+    height: 70%;
+    .skill ul {
+      padding: 10px;
+    }
+
+    .skill__head{
+      height: 10%;
+      padding: 0;
+
+      h3{
+        padding: 10px;
+      }
+    }
+
+  }
+  .skills.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 

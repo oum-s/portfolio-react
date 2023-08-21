@@ -316,3 +316,15 @@
   }
   
 }
+
+@media screen and (max-width: 400px){
+  .Header.hide-nav .Navbar#not-fixed.myNavbar {
+    width: 87%;
+  }
+  .Header .Navbar__burger {
+    width: 2rem;
+    height: 3rem;
+    top: 2.4rem;
+    right: 3.4rem;
+  }
+}
