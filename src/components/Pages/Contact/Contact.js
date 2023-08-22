@@ -11,7 +11,8 @@ import * as yup from "yup";
     //FORMULAIRE
     const regexNames = new RegExp("^[a-zA-Z-'.\u00C0-\u00FF]*$");
     const regexEmail = new RegExp("^([a-zA-Z0-9.]{2,})+@([a-zA-Z0-9.]{2,})+[.]+([a-zA-Z0-9-]{2,20})$");//ok
-const schema = yup
+    
+    const schema = yup
     .object({
       nom: yup.string()
         .min(3, '3 caractères minimum')
@@ -28,6 +29,7 @@ const schema = yup
         .required('Message obligatoire'),
     })
     .required();
+
  // maitriser l'underline des liens de nav
  function Contact({activeNav, setActiveNav}) {
    /* const handleActiveNav = () => {
@@ -52,20 +54,20 @@ const schema = yup
 
 
   const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs.sendForm(
-      'service_rugh2rg',
-      'template_64rv9lk',
-      form.current,
-      'AQvwjQlL92YTS9R7-')
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-          }
-    );
-  };
+    const sendEmail = (e) => {
+      e.preventDefault();
+      emailjs.sendForm(
+        'service_rugh2rg',
+        'template_64rv9lk',
+        form.current,
+        'AQvwjQlL92YTS9R7-')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+            }
+      );
+    };
 
   const {
     register,
