@@ -82,11 +82,10 @@ import * as yup from "yup";
     sendEmail(e);
     reset();
   }
-  console.log(errors);
   
     return (
       <section id="contact">
-        <h3 className='special'> Get in Touch</h3>
+        <h3 className='special'> Contact</h3>
   
         <div className='container contact__container'>
   
